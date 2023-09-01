@@ -1,5 +1,6 @@
 @import url('./reset.css');
 @import url('./header.css');
+@import url('./pop-up.css');
 
 :root {
   --main-cl: #4f2ee8;
