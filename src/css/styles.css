@@ -1,6 +1,7 @@
 @import url('./reset.css');
 @import url('./header.css');
 @import url('./pop-up.css');
+@import url('./query-and-markup.css');
 :root {
   --main-cl: #4f2ee8;
   --text-cl: #111111;
