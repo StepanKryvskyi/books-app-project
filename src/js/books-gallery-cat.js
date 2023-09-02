@@ -7,7 +7,7 @@ async function createCategoryGallery() {
   let selectedCategory = 'Hardcover Fiction';
   try {
     const { data } = await makeRequestByCategory(selectedCategory);
-    console.log(data);
+    // console.log(data);
     addMarkup(data);
   } catch (error) {
     console.error(error.message);
