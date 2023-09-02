@@ -1,3 +1,20 @@
-.categories-list {
-  
+.book-list {
+  max-width: 328px;
+}
+
+.list-link:hover,
+.list-link:focus{
+    color: #4F2EE8;
+    text-transform: uppercase;
+    cursor: pointer;
+
+}
+.list-link {
+  font-size: 18px;
+}
+
+.list-link::before {
+  content: "";
+  color: #4F2EE8;
+  text-transform: uppercase;
 }
