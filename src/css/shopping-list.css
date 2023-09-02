@@ -1,0 +1,52 @@
+.shopping-list-title {
+    color: #111;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -1.28px;
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-bottom: 40px;
+}
+
+@media screen and (min-width: 768px) {
+    .shopping-list-title {
+        font-size: 48px;
+        letter-spacing: -1.92px; 
+        margin-left: 32px;       
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .shopping-list-title {
+        margin-left: 0;
+    }
+}
+
+.shopping-list-subtitle {
+    color: #4F2EE8;
+}
+
+.shopping-list-book-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shopping-list-book-card {
+    width: 996px;
+    height: 213px;
+    padding: 30px 24px;
+    border-radius: 16px;
+    border: 2px solid rgba(79, 46, 232, 0.40);
+    background: #FFF;
+}
+
+.shopping-list-book-card img {
+    width: 116px;
+    height: 165px;
+    border-radius: 8px;
+}
+
+
