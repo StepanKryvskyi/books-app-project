@@ -1,11 +1,14 @@
 @import url('./reset.css');
 @import url('./header.css');
 @import url('./pop-up.css');
+
 @import url('./query-and-markup.css');
+@import url('./books-by-cat.css');
+
 :root {
   --main-cl: #4f2ee8;
   --text-cl: #111111;
-  --secandery-text-cl: #b4afaf;
+  --secondary-text-cl: #b4afaf;
 
   font-family: 'DM Sans', sans-serif;
   font-size: 16px;
@@ -56,14 +59,21 @@
   overflow: hidden;
 }
 
+section {
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
 .container {
   max-width: 375px;
   margin-right: auto;
   margin-left: auto;
   padding-left: 20px;
   padding-right: 20px;
-  margin: auto;
-  text-align: center;
+}
+
+.lists {
+  margin-bottom: 40px;
 }
 
 /* For Tablet */
@@ -73,13 +83,31 @@
     padding-left: 32px;
     padding-right: 32px;
   }
+
+  section {
+    padding-bottom: 100px;
+  }
+
+  .lists {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 100px;
+  }
 }
 
 /* For Desktop */
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .container {
-    max-width: 1280px;
-    padding-left: 32px;
-    padding-right: 32px;
+    display: flex;
+    gap: 40px;
+    max-width: 1440px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .lists {
+    flex-direction: column;
+    gap: 86px;
+    margin-bottom: 0;
   }
 }
