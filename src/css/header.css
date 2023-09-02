@@ -1,8 +1,14 @@
 .header {
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 14px 24px;
   border-radius: 0px 0px 8px 8px;
   border: 1.5px solid #111;
+}
+
+.logo-link {
+  padding-top: 12px;
 }
 
 .nav-list {
@@ -23,6 +29,14 @@
   justify-content: center;
   align-items: center;
   gap: 4px;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  font-weight: 700;
+  background-color: #eac645;
+  padding: 8px 16px;
+  border-radius: 36px;
 }
 
 .switch {
