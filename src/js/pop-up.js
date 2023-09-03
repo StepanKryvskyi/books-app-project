@@ -1,39 +1,30 @@
 import axios from "axios";
+import { getSelectedBookData } from "./API/API-by-categories";
+
 const popUp = document.getElementById("popUp");
-const openBtn = document.getElementById("openModalBtn");
+// const openBtn = document.getElementById("openModalBtn");
 const closeBtn = document.querySelector('.close');
 const modalCard = document.querySelector('.book-card')
-const bookList = document.getElementById("book-list")
+const galleryList = document.querySelector(".gallery")
 const BASE_URL = 'https://books-backend.p.goit.global/books/';
 
 
 let selectedBookData = null;
 
-bookList.addEventListener("click", onBookClick)
+galleryList.addEventListener("click", onBookClick)
 function onBookClick(evt){
   if(evt.target.tagName === "LI"){
     const bookId = evt.target.id;
     openModal(bookId)
-
+      console.log(bookId);
     if(selectedBookData){
       createMarkup(selectedBookData)
     }
   }
 }
- async function getSelectedBookData(bookId){
-  const params = new URLSearchParams(
-    { _id: bookId,
-      book_image, 
-      title, 
-      author,
-      description, 
-      buy_links
-    })
-    const resp = await axios.get(`?${params}`);
-    const selectedBookData = resp.data
-    return selectedBookData
+export{onBookClick}
+ console.log(getSelectedBookData(bookId));
 
- }
 async function openModal(bookId) {
   try {
     selectedBookData = await getSelectedBookData(bookId);
