@@ -19,24 +19,13 @@ async function createCategory() {
   }
 }
 
-
-
-
 function createMarkup(arr) {
   return arr.map(({ list_name }) =>
-    `<li class="book-card" ><a class="img-link">
+    `<li class="book-list" ><a class="list-link">
 ${list_name}
   </a>
 </li>`).join(" ")
 };
 
-// function addCategoryList(category) {
-
-// }
 export {createCategory}
 
-// function handleClick(e) {
-//   e.preventDefault();
-//   window.scrollTo({ top: 0, behavior: 'smooth' });
-
-// }
