@@ -1,5 +1,5 @@
 
-
+import './js/pagination';
 import { createCategoryGallery, createBestsellersGallery} from './js/books-gallery-cat';
 import { galleryList, catList, catTitle } from './js/refs';
 import { addCategoryTitle } from './js/gallery-markup';
@@ -33,3 +33,4 @@ function onClickShowCatBooks(evt) {
     
 }
 onBookClick()
+
