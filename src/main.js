@@ -3,6 +3,8 @@ import { createCategoryGallery, createBestsellersGallery} from './js/books-galle
 import { galleryList } from './js/refs';
 import { addCategoryTitle } from './js/gallery-markup';
 import { createCategory } from './js/query-and-markup';
+import { onBookClick } from './js/pop-up';
+
 // Creating bestsellers gallery
 
 createBestsellersGallery();
@@ -21,3 +23,5 @@ if (evt.target.nodeName === "a") {
 }
    
 }
+
+onBookClick()

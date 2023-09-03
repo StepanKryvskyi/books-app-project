@@ -10,9 +10,10 @@ const galleryList = document.querySelector('.gallery');
 
 let selectedBookData = null;
 
-galleryList.addEventListener("click", onBookClick)
-function onBookClick(evt){
-  const bookId = evt.currentTarget.id;
+// galleryList.addEventListener("click", onBookClick)
+export function onBookClick(){
+  // const bookId = evt.target.getAtributeById(id);
+  const bookId = "643282b1e85766588626a0dc";
   console.log(bookId);
     openModal(bookId)
 
