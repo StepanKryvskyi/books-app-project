@@ -1,0 +1,108 @@
+ul {
+    list-style: none;
+}
+
+.container-support {
+    position: relative;
+
+    
+    border-radius: 16px;
+    width: 335px;
+    height: 352px;
+    background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%) 
+
+}
+
+@media screen and (min-width: 768px) {
+    .container-support {
+      height: 474px;
+    }
+}
+
+@media screen and (min-width: 1158px) {
+    .container-support {
+        width: 356px; 
+    }
+}
+
+.primart-text-support {
+  padding-top: 28px;
+  padding-bottom: 44px;
+  padding-left: 40px;  
+
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 24px;
+  letter-spacing: -0.04em;
+
+  color: #FFFFFF;
+
+  font-family: DM Sans;
+}
+
+@media screen and (min-width: 768px) {
+    .primart-text-support {
+        padding-bottom: 42px;
+        font-size: 24px;
+        line-height: 28px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .primart-text-support {
+        padding-bottom: 40px;
+    }
+}
+
+.emblem {
+    position: absolute;
+    top: 24px;
+    left: 213px;
+}
+
+@media screen and (min-width: 768px) {
+    .emblem {
+        left: 228px;
+    }
+}
+
+.list-support {
+    overflow-y: scroll;
+    height: 188px;
+    padding: 0 0 0 40px;
+    margin: 0;
+}
+
+@media screen and (min-width: 768px){
+    .list-support {
+        height: 292px;
+    }
+}
+
+.el-support { 
+    align-items: center;
+    display: flex;
+  padding-top: 20px;
+}
+
+.el-support:first-child{
+    padding-top: 0;
+}
+
+.number {
+    padding-right: 16px;
+    color: #FFFFFF;
+    font-family: 'DM Sans';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    
+
+}
+
+.img-support {
+    filter: brightness(0) invert(1);
+    max-width: 131px;
+}
+
