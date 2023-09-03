@@ -4,9 +4,12 @@ import { createCategoryGallery, createBestsellersGallery} from './js/books-galle
 import { galleryList, catList, catTitle } from './js/refs';
 import { addCategoryTitle } from './js/gallery-markup';
 import { createCategory } from './js/query-and-markup';
+import { onBookClick } from './js/pop-up';
+
 import { load } from './js/support-ukraine';
 // creating list of categories
 createCategory();
+
 // Creating bestsellers gallery
 
 createBestsellersGallery();
@@ -29,5 +32,4 @@ function onClickShowCatBooks(evt) {
 }
     
 }
-
-
+onBookClick()
