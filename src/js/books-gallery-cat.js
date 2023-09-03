@@ -23,6 +23,7 @@ async function createCategoryGallery(category) {
       return;
     }
     addMarkup(createBookMarkup(data));
+
   } catch (error) {
     console.error(error.message);
   }
