@@ -1,21 +1,18 @@
-import { makeRequestByCategory } from './API-by-categories';
-import { createBookMarkup } from './gallery-markup';
+import { makeRequestByCategory, makeRequestAllBooks } from './API-by-categories';
+import { createBookMarkup, createBestsellersMarkup } from './gallery-markup';
 import { galleryList, booksBox } from './refs';
 
 // Creating a gallery of bestsellers book all categories
-// async function createBestsellersGallery() {
-//   try {
-//     const { data } = await makeRequestAllBooks();
-//     console.log(data)
-//     // addMarkup(data);
-//   } catch (error) {
-//     console.error(error.message);
-//   }
-// }
-
-// createBestsellersGallery()
-
-
+async function createBestsellersGallery() {
+  try {
+    const { data } = await makeRequestAllBooks();
+    console.log(data)
+    console.log(createBestsellersMarkup(data))
+    addMarkup(createBestsellersMarkup(data));
+  } catch (error) {
+    console.error(error.message);
+  }
+}
 // Creating books gallery by category
 async function createCategoryGallery(category) {
   try {
@@ -25,14 +22,14 @@ async function createCategoryGallery(category) {
       booksBox.insertAdjacentHTML('beforeend', noBooksMessage)
       return;
     }
-    addMarkup(data);
+    addMarkup(createBookMarkup(data));
   } catch (error) {
     console.error(error.message);
   }
 }
 
-function addMarkup(data) {
-  galleryList.innerHTML = createBookMarkup(data);
+function addMarkup(markup) {
+  galleryList.innerHTML = markup;
 }
 
-export { createCategoryGallery};
+export { createCategoryGallery, createBestsellersGallery};
