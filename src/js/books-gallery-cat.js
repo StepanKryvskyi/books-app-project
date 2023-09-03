@@ -6,8 +6,6 @@ import { galleryList, booksBox } from './refs';
 async function createBestsellersGallery() {
   try {
     const { data } = await makeRequestAllBooks();
-    console.log(data)
-    console.log(createBestsellersMarkup(data))
     addMarkup(createBestsellersMarkup(data));
   } catch (error) {
     console.error(error.message);
