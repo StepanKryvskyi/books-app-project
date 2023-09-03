@@ -6,6 +6,8 @@
 @import url('./query-and-markup.css');
 @import url('./books-by-cat.css');
 
+@import url('./shopping-list.css');
+
 :root {
   --main-cl: #4f2ee8;
   --text-cl: #111111;
