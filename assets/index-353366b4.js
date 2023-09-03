@@ -8,7 +8,7 @@
     <p class="author-name">
       ${r}
     </p></a> 
-</li>`).join(" ")}const Yt=document.querySelector(".gallery");async function en(){let e="Hardcover Fiction";try{const{data:t}=await Qt(e);tn(t)}catch(t){console.error(t.message)}}function tn(e){Yt.innerHTML=Zt(e)}const nn="https://books-backend.p.goit.global/books/category-list",rn=document.querySelector(".categories-list");async function sn(){return await Ue.get(nn)}async function on(){try{const{data:e}=await sn();rn.innerHTML=an(e)}catch(e){console.error(e.message)}}function an(e){return e.map(({list_name:t})=>`<li class="book-card" ><a class="img-link">
+</li>`).join(" ")}const Yt=document.querySelector(".gallery");async function en(){let e="Hardcover Fiction";try{const{data:t}=await Qt(e);tn(t)}catch(t){console.error(t.message)}}function tn(e){Yt.innerHTML=Zt(e)}const nn="https://books-backend.p.goit.global/books/category-list",rn=document.querySelector(".categories-list");async function sn(){return await Ue.get(nn)}async function on(){try{const{data:e}=await sn();rn.innerHTML=an(e)}catch(e){console.error(e.message)}}function an(e){return e.map(({list_name:t})=>`<li class="book-list" ><a class="list-link">
 ${t}
   </a>
 </li>`).join(" ")}en();on();
