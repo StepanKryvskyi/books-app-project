@@ -28,4 +28,4 @@ ${t}
         <img src="${e.img}" alt="${e.title}" class="img-support">
       </a>
     </li>
-  `}function bn(){yn.innerHTML=gn.map(e=>wn(e)).join("")}hn();Ie();He.addEventListener("click",En);function En(e){if(Me.innerHTML="",e.target===He.firstElementChild)me("Best Sellers Books"),Ie();else{const t=e.target.textContent;me(t),ln(t)}}bn();
+  `}function bn(){yn.innerHTML=gn.map(e=>wn(e)).join("")}hn();Ie();bn();He.addEventListener("click",En);function En(e){if(Me.innerHTML="",e.target===He.firstElementChild)me("Best Sellers Books"),Ie();else{const t=e.target.textContent;me(t),ln(t)}}
