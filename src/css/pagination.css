@@ -166,7 +166,11 @@
   display: flex;
 }
 /* // DARK MODE */
+<<<<<<< Updated upstream
 /* .page-dark-mode {
+=======
+.page-dark-mode {
+>>>>>>> Stashed changes
   border-color: var(--gray-ul-d);
   color: var(--white-d);
 }
@@ -179,4 +183,12 @@
 
 .tui-pagination .tui-prev {
   margin-right: 4px;
+<<<<<<< Updated upstream
 } */
+=======
+}
+
+.tui-last,
+.tui-next {
+}
+>>>>>>> Stashed changes
