@@ -10,7 +10,7 @@
 
 }
 .list-link {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .list-link::before {
@@ -18,3 +18,18 @@
   color: #4F2EE8;
   text-transform: uppercase;
 }
+.scroll-container {
+    width: 335px;
+    height: 228px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+@media screen and (min-width: 768px) {
+  .scroll-container {
+    width: 337px;
+    height: 472px;
+
+  }
+}
+
