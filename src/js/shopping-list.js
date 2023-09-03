@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const bookList = document.getElementById("bookList");
-    const emptyMessage = document.getElementById("emptyMessage");
+    const bookList = document.getElementById("shoppingBookList");
+    const emptyMessage = document.getElementById("shoppingEmptyMessage");
 
     const shoppingList = JSON.parse(localStorage.getItem("shoppingList")) || [];
 
@@ -31,3 +31,41 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error("Помилка при отриманні даних з API:", error);
         });
 });
+
+function createBookCard(bookData) {
+    const card = document.createElement("li");
+    card.classList.add("shopping-list-book-card");
+
+    const image = document.createElement("img");
+    image.classList.add("shopping-list-img");
+    image.src = bookData.book_image; 
+    card.appendChild(image);
+
+    const details = document.createElement("div");
+    details.classList.add("shopping-list-book-details");
+
+    const title = document.createElement("h2");
+    title.classList.add("shopping-list-book-name");
+    title.textContent = bookData.title; 
+    details.appendChild(title);
+
+    const genre = document.createElement("p");
+    genre.classList.add("shopping-list-book-genre");
+    genre.textContent = bookData.list_name; 
+    details.appendChild(genre);
+
+    const description = document.createElement("p");
+    description.classList.add("shopping-list-book-deskription");
+    description.textContent = bookData.description; 
+    details.appendChild(description);
+
+    const author = document.createElement("p");
+    author.classList.add("shopping-list-author");
+    author.textContent = bookData.author; 
+    details.appendChild(author);
+
+    card.appendChild(details);
+
+    const icons = document.createElement("div");
+    icons.classList.add("shopping-list-icons");
+}
