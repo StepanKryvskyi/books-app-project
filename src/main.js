@@ -1,8 +1,10 @@
 
+
 import { createCategoryGallery, createBestsellersGallery} from './js/books-gallery-cat';
 import { galleryList } from './js/refs';
 import { addCategoryTitle } from './js/gallery-markup';
 import { createCategory } from './js/query-and-markup';
+import { load } from './js/support-ukraine';
 // Creating bestsellers gallery
 
 createBestsellersGallery();
@@ -21,3 +23,6 @@ if (evt.target.nodeName === "a") {
 }
    
 }
+
+load()
+
