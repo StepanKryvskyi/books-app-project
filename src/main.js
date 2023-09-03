@@ -11,6 +11,8 @@ createBestsellersGallery();
 
 // Creating books gallery by category
 
+load()
+
 catList.addEventListener('click', onClickShowCatBooks);
 
 function onClickShowCatBooks() {
@@ -24,5 +26,4 @@ if (evt.target.nodeName === "a") {
    
 }
 
-load()
 
