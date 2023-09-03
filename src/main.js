@@ -2,7 +2,7 @@
 import { createCategoryGallery, createBestsellersGallery} from './js/books-gallery-cat';
 import { galleryList } from './js/refs';
 import { addCategoryTitle } from './js/gallery-markup';
-
+import { createCategory } from './js/query-and-markup';
 // Creating bestsellers gallery
 
 createBestsellersGallery();
@@ -21,11 +21,3 @@ if (evt.target.nodeName === "a") {
 }
    
 }
-
-
-// import { createCategoryGallery } from './js/books-gallery-cat';
-// import { createCategory } from './js/query-and-markup';
-
-// createCategoryGallery();
-// createCategory();
-

@@ -33,7 +33,7 @@ function addCategoryTitle(category) {
 // Помилка у функції нижче
 
 function createBestsellersMarkup(arr) {
-  arr.map(({ list_name, books }) => `<div class="books-category">
+  return arr.map(({ list_name, books }) => `<div class="books-category">
           <p class="bestsellers-cat-title">${list_name}</p>
           <ul">
             <li class="books-list">${createBookMarkup(books)}</li>
