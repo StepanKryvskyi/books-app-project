@@ -19,7 +19,7 @@ ul {
     }
 }
 
-@media screen and (min-width: 1158px) {
+@media screen and (min-width: 1440px) {
     .container-support {
         width: 356px; 
     }
@@ -37,7 +37,7 @@ ul {
 
   color: #FFFFFF;
 
-  font-family: DM Sans;
+  font-family: var(font-family);
 }
 
 @media screen and (min-width: 768px) {
@@ -92,12 +92,11 @@ ul {
 .number {
     padding-right: 16px;
     color: #FFFFFF;
-    font-family: 'DM Sans';
+    font-family: var(font-family);
     font-size: 14px;
     font-weight: 400;
     line-height: 18px;
-    letter-spacing: -0.04em;
-    
+    letter-spacing: -0.04em
 
 }
 
@@ -106,3 +105,21 @@ ul {
     max-width: 131px;
 }
 
+#list-support::-webkit-scrollbar {
+    width: 8px;
+}
+
+#list-support::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+#list-support::-webkit-scrollbar-thumb {
+    background-color: transparent; 
+    border-radius: 10px;
+    transition: background-color 0.2s; 
+}
+
+#list-support:hover::-webkit-scrollbar-thumb, 
+#list-support::-webkit-scrollbar-thumb:hover { 
+    background-color: rgba(204, 185, 255, 0.7);
+}
