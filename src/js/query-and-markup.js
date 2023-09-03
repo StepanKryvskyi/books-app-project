@@ -12,8 +12,8 @@ async function createCategory() {
   try {
     const { data } = await makeRequestCategoryList();
 
-    categoriesList.innerHTML = createMarkup(data);
-    // addCategoryList(data);
+    categoriesList.insertAdjacentHTML('beforeend', createMarkup(data)) ;
+   
   } catch (error) {
     console.error(error.message);
   }
