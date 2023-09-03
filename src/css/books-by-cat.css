@@ -37,6 +37,67 @@
   color: var(--secondary-text-cl);
 }
 
+.cat-span {
+  color: var(--main-cl);
+}
+
+.no-books-text {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.2;
+  font-style: italic;
+  color: var(--secondary-text-cl);
+}
+
+.overlay-bg {
+  position: absolute;
+  padding: 26px 48px;
+  bottom: 50;
+  width: 100%;
+  height: 70px;
+  background: #eac645;
+  border-radius: 0px 0px 8px 8px;
+  opacity: 0;
+
+  opacity: 0;
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay-text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  line-height: calc(14 / 18);
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--dark-header-bg-color);
+
+  opacity: 0;
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.book-card-wrapper:hover .overlay-bg {
+  opacity: 100%;
+}
+
+.book-card-wrapper:hover .overlay-text {
+  opacity: 100%;
+}
+
+.book-card-wrapper:hover {
+  border-radius: 8px;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+
+  transition: box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 @media screen and (min-width: 768px) {
   .books {
     margin-bottom: 100px;

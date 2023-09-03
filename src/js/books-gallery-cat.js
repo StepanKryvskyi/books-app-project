@@ -1,13 +1,30 @@
-import { makeRequestByCategory } from './API/API-by-categories';
-import { createMarkup } from './markup/gallery-markup';
+import { makeRequestByCategory } from './API-by-categories';
+import { createBookMarkup } from './gallery-markup';
+import { galleryList, booksBox } from './refs';
 
-const galleryList = document.querySelector('.gallery');
+// Creating a gallery of bestsellers book all categories
+// async function createBestsellersGallery() {
+//   try {
+//     const { data } = await makeRequestAllBooks();
+//     console.log(data)
+//     // addMarkup(data);
+//   } catch (error) {
+//     console.error(error.message);
+//   }
+// }
 
-async function createCategoryGallery() {
-  let selectedCategory = 'Hardcover Fiction';
+// createBestsellersGallery()
+
+
+// Creating books gallery by category
+async function createCategoryGallery(category) {
   try {
-    const { data } = await makeRequestByCategory(selectedCategory);
-    console.log(data);
+    const { data } = await makeRequestByCategory(category);
+    if (!data.length) {
+      const noBooksMessage = '<p class="no-books-text">Sorry, there are no books in this category...</p>';
+      booksBox.insertAdjacentHTML('beforeend', noBooksMessage)
+      return;
+    }
     addMarkup(data);
   } catch (error) {
     console.error(error.message);
@@ -15,7 +32,7 @@ async function createCategoryGallery() {
 }
 
 function addMarkup(data) {
-  galleryList.innerHTML = createMarkup(data);
+  galleryList.innerHTML = createBookMarkup(data);
 }
 
-export { createCategoryGallery };
+export { createCategoryGallery};
