@@ -1,7 +1,6 @@
-
-
+import './js/pagination';
 import { createCategoryGallery, createBestsellersGallery} from './js/books-gallery-cat';
-import { galleryList, catList, catTitle } from './js/refs';
+import { galleryList, catList, loader} from './js/refs';
 import { addCategoryTitle } from './js/gallery-markup';
 import { createCategory } from './js/query-and-markup';
 import {  createMarkup, createBookCard } from './js/pop-up';
@@ -12,7 +11,6 @@ import { load } from './js/support-ukraine';
 createCategory();
 
 // Creating bestsellers gallery
-
 createBestsellersGallery();
 
 // Creating books gallery by category
@@ -22,17 +20,21 @@ load()
 catList.addEventListener('click', onClickShowCatBooks);
 
 function onClickShowCatBooks(evt) {    
-    galleryList.innerHTML = "";
-    if (evt.target === catList.firstElementChild) {
-        addCategoryTitle('Best Sellers Books');
-        createBestsellersGallery();
+  galleryList.innerHTML = "";
+  loader.classList.toggle('visually-hidden');
+  if (evt.target.textContent === "All categories") {
+        addCategoryTitle('Best Sellers Books # #');
+    createBestsellersGallery();
+    loader.classList.toggle('visually-hidden');
   } else {
     const cat = evt.target.textContent; 
      addCategoryTitle(cat);
-     createCategoryGallery(cat); 
+    createCategoryGallery(cat); 
+    loader.classList.toggle('visually-hidden');
 }
     
 }
+
 
 galleryList.addEventListener("click", onBookClick)
 
@@ -41,6 +43,5 @@ galleryList.addEventListener("click", onBookClick)
   popUp.style.display = "block";
   
     createBookCard(bookId)
-    
-     
 }
+onBookClick()
