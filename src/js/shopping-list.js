@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-
     const bookList = document.getElementById("shoppingBookList"); 
     const emptyMessage = document.getElementById("shoppingEmptyMessage"); 
 
@@ -9,12 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
         emptyMessage.style.display = "block";
     } else {
         shoppingList.forEach(book => {
-            const card = createShoppingCard(book);
+            const card = createBookCard(book);
             bookList.appendChild(card);
         });
     }
 
-    const apiUrl = "https://books-backend.p.goit.global/api/books";
+    const apiUrl = "https://books-backend.p.goit.global/books/bookId";
 
     fetch(apiUrl)
         .then(response => response.json())
@@ -22,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
             bookList.innerHTML = '';
             data.forEach(bookData => {
                 shoppingList.push(bookData);
-                const card = createShoppingCard(bookData);
+                const card = createBookCard(bookData);
                 bookList.appendChild(card);
             });
 
@@ -33,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 });
 
-export function createShoppingCard(bookData) {
+function createBookCard(bookData) {
     const card = document.createElement("li");
     card.classList.add("shopping-list-book-card");
 
@@ -105,12 +104,12 @@ function removeBookFromShoppingList(bookId) {
 function refreshShoppingListDisplay() {
     const shoppingList = JSON.parse(localStorage.getItem("shoppingList")) || [];
 
-    const bookList = document.getElementById("shoppingBookList");
+    const bookList = document.getElementById("bookList");
 
     bookList.innerHTML = "";
 
     shoppingList.forEach(book => {
-        const card = createShoppingCard(book);
+        const card = createBookCard(book);
         bookList.appendChild(card);
     });
 }
