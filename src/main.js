@@ -4,10 +4,10 @@ import { galleryList, catList, loader} from './js/refs';
 import { addCategoryTitle } from './js/gallery-markup';
 import { createCategory } from './js/query-and-markup';
 import {  createMarkup, createBookCard } from './js/pop-up';
-import { createShoppingCard } from './js/shopping-list';
+// import { createShoppingCard } from './js/shopping-list';
 
 createCategoryGallery();
-createShoppingCard();
+// createShoppingCard();
 
 
 import { load } from './js/support-ukraine';
