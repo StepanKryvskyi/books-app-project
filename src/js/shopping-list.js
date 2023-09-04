@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+
     const bookList = document.getElementById("shoppingBookList"); 
     const emptyMessage = document.getElementById("shoppingEmptyMessage"); 
 
@@ -8,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
         emptyMessage.style.display = "block";
     } else {
         shoppingList.forEach(book => {
-            const card = createBookCard(book);
+            const card = createShoppingCard(book);
             bookList.appendChild(card);
         });
     }
@@ -21,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
             bookList.innerHTML = '';
             data.forEach(bookData => {
                 shoppingList.push(bookData);
-                const card = createBookCard(bookData);
+                const card = createShoppingCard(bookData);
                 bookList.appendChild(card);
             });
 
@@ -32,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 });
 
-function createBookCard(bookData) {
+export function createShoppingCard(bookData) {
     const card = document.createElement("li");
     card.classList.add("shopping-list-book-card");
 
@@ -104,12 +105,13 @@ function removeBookFromShoppingList(bookId) {
 function refreshShoppingListDisplay() {
     const shoppingList = JSON.parse(localStorage.getItem("shoppingList")) || [];
 
-    const bookList = document.getElementById("bookList");
+    const bookList = document.getElementById("shoppingBookList");
 
     bookList.innerHTML = "";
 
     shoppingList.forEach(book => {
-        const card = createBookCard(book);
+        const card = createShoppingCard(book);
         bookList.appendChild(card);
     });
 }
+
