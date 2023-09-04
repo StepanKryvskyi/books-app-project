@@ -1,7 +1,10 @@
+import './js/pagination';
 import { createCategoryGallery, createBestsellersGallery} from './js/books-gallery-cat';
 import { galleryList, catList, loader} from './js/refs';
 import { addCategoryTitle } from './js/gallery-markup';
 import { createCategory } from './js/query-and-markup';
+import { onBookClick } from './js/pop-up';
+
 import { load } from './js/support-ukraine';
 // creating list of categories
 createCategory();
@@ -10,6 +13,8 @@ createCategory();
 createBestsellersGallery();
 
 // Creating books gallery by category
+
+load()
 
 catList.addEventListener('click', onClickShowCatBooks);
 
@@ -28,6 +33,5 @@ function onClickShowCatBooks(evt) {
 }
     
 }
-
-load()
+onBookClick()
 
