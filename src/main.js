@@ -1,4 +1,4 @@
-import './js/pagination';
+// import './js/pagination';
 import { createCategoryGallery, createBestsellersGallery} from './js/books-gallery-cat';
 import { galleryList, catList, loader} from './js/refs';
 import { addCategoryTitle } from './js/gallery-markup';
