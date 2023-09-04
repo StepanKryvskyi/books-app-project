@@ -40,28 +40,27 @@
   <body>
     <load src="partials/header.html" />
     <main>
-      <load src="partials/home-page.html" />
-      <load src="partials/pop-up.html" />
-      <load src="partials/query-and-markup.html" />
       <section>
         <div class="container">
+
           <div class="lists">
             <div class="categories">
-              <ul class="categories-list"></ul>
+              <ul class="categories-list scroll-container">
+                <li class="book-list"><a href="#" class="list-link">All categories</a></li>
+              </ul>
             </div>
-            <div class="funds">
-              <ul class="funds-list"></ul>
+            <div class="container-support">
+              <p class="primart-text-support">Support Ukraine</p><img src="../img/favicon/Vector.png" alt="emblem" class="emblem">
+              <ul class="list-support" id="list-support"></ul>
             </div>
           </div>
           <div class="books">
-            <h1 class="category-title">Title</h1>
-            <ul class="gallery"></ul>
+            <h1 class="category-title">Best Sellers<span class="cat-span">Books</span></h1>
+            <div class="gallery"></div>
+            <p class="loader visually-hidden"></p>
           </div>
-        </div>
       </section>
-      <load src="partials/home-page.html" />
       <load src="partials/pop-up.html" />
-
     </main>
     <script type="module" src="/main.js"></script>
   </body>
