@@ -15,8 +15,7 @@ function createBookMarkup(arr) {
         <img class="book-cover" src="${book_image}" alt="book cover" loading="lazy"/>
         <div class="overlay-bg">
         <p class="overlay-text">QUICK VIEW</p>
-        </div></div><h2 class="book-title">${title.split('').slice(0, 17)
-          .join('')}...</h2><p class="author-name">${author}</p></a></div>`
+        </div></div><h2 class="book-title">${title.split('').slice(0, 17).join('')}...</h2><p class="author-name">${author}</p></a></div>`
     )
     .join('');
 }
