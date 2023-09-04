@@ -1,11 +1,12 @@
-
-import './js/pagination';
-import { createCategoryGallery, createBestsellersGallery} from './js/books-gallery-cat';
+import {
+  createCategoryGallery,
+  createBestsellersGallery,
+} from './js/books-gallery-cat';
 import { galleryList, catList, catTitle } from './js/refs';
 import { addCategoryTitle } from './js/gallery-markup';
 import { createCategory } from './js/query-and-markup';
 import { onBookClick } from './js/pop-up';
-
+import { pagination } from './js/pagination';
 import { load } from './js/support-ukraine';
 // creating list of categories
 createCategory();
@@ -16,21 +17,19 @@ createBestsellersGallery();
 
 // Creating books gallery by category
 
-load()
+load();
 
 catList.addEventListener('click', onClickShowCatBooks);
 
-function onClickShowCatBooks(evt) {    
-    galleryList.innerHTML = "";
-    if (evt.target === catList.firstElementChild) {
-        addCategoryTitle('Best Sellers Books');
-        createBestsellersGallery();
+function onClickShowCatBooks(evt) {
+  galleryList.innerHTML = '';
+  if (evt.target === catList.firstElementChild) {
+    addCategoryTitle('Best Sellers Books');
+    createBestsellersGallery();
   } else {
-    const cat = evt.target.textContent; 
-     addCategoryTitle(cat);
-     createCategoryGallery(cat); 
+    const cat = evt.target.textContent;
+    addCategoryTitle(cat);
+    createCategoryGallery(cat);
+  }
 }
-    
-}
-onBookClick()
-
+onBookClick();
