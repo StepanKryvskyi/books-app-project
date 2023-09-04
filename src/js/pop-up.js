@@ -1,42 +1,30 @@
 import axios from "axios";
-import {getSelectedBookData} from './API-by-book-Id-info'
+import {requestBookData} from './API-by-book-Id-info'
 
 const popUp = document.getElementById("popUp");
 const closeBtn = document.querySelector('.close');
 const modalCard = document.querySelector('.book-card');
-const galleryList = document.querySelector('.gallery');
 
 
 
-let selectedBookData = null;
-
-// galleryList.addEventListener("click", onBookClick)
-export function onBookClick(){
-  // const bookId = evt.target.getAtributeById(id);
-  const bookId = "643282b1e85766588626a0dc";
-  console.log(bookId);
-    openModal(bookId)
-
-    if(selectedBookData){
-      createMarkup(selectedBookData)
-    }
-  
-}
 
 
-async function openModal(bookId) {
+
+
+
+async function createBookCard(bookId) {
   try {
-    selectedBookData = await getSelectedBookData(bookId);
-    console.log(selectedBookData);
-    addMarkup(selectedBookData);
+    const data = await requestBookData(bookId);
+    console.log(data);
+    addMarkup(data);
   } catch (error) {
     console.error(error.message);
   }
-  popUp.style.display = "block";
+  
 }
 
 function createMarkup({_id, book_image, title, author, buy_links, description}){
-  `<div class="cover-book">${book_image}</div>
+  `<div id=${_id} class="cover-book">${book_image}</div>
       <div class="book-info">
         <h1 class="modal-title">${title}</h1>
         <h3 class="modal-author">${author}</h3>
@@ -46,8 +34,8 @@ function createMarkup({_id, book_image, title, author, buy_links, description}){
         </ul>
       </div>`
  }
- function addMarkup(selectedBookData){
-  modalCard.innerHTML = createMarkup(selectedBookData)  
+ function addMarkup(data){
+  modalCard.innerHTML = createMarkup(data)  
  }
 
 
@@ -61,3 +49,4 @@ window.onclick = function(event) {
   }
 }
 
+export { createBookCard, createMarkup}

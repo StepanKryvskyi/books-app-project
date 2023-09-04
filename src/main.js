@@ -3,7 +3,8 @@ import { createCategoryGallery, createBestsellersGallery} from './js/books-galle
 import { galleryList, catList, loader} from './js/refs';
 import { addCategoryTitle } from './js/gallery-markup';
 import { createCategory } from './js/query-and-markup';
-import { onBookClick } from './js/pop-up';
+import {  createMarkup, createBookCard } from './js/pop-up';
+
 
 import { load } from './js/support-ukraine';
 // creating list of categories
@@ -33,5 +34,15 @@ function onClickShowCatBooks(evt) {
 }
     
 }
-onBookClick()
 
+
+galleryList.addEventListener("click", onBookClick)
+
+ function onBookClick(evt){
+  // const bookId = evt.target.getAtribute("id");
+  popUp.style.display = "block";
+  const bookId = "643282b1e85766588626a0dc";
+  console.log(bookId);
+    createBookCard(bookId)
+}
+onBookClick()
