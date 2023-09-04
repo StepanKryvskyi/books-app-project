@@ -1,8 +1,8 @@
 @import url('./reset.css');
 @import url('./header.css');
 @import url('./pop-up.css');
+@import url('./pagination.css');
 @import url('./support-ukraine.css');
-
 @import url('./query-and-markup.css');
 @import url('./books-by-cat.css');
 
@@ -12,6 +12,8 @@
   --main-cl: #4f2ee8;
   --text-cl: #111111;
   --secondary-text-cl: #b4afaf;
+  --active-cl: #EAC645;
+  
 
   font-family: 'DM Sans', sans-serif;
   font-size: 16px;
