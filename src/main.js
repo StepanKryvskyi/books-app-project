@@ -37,10 +37,9 @@ function onClickShowCatBooks(evt) {
 galleryList.addEventListener("click", onBookClick)
 
  function onBookClick(evt){
-  // const bookId = evt.target.getAtribute("id");
+  const bookId = evt.target.closest('.book-card').getAttribute('id');
   popUp.style.display = "block";
-  const bookId = "643282b1e85766588626a0dc";
-  console.log(bookId);
+  
     createBookCard(bookId)
     
      

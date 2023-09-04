@@ -12,9 +12,12 @@ async function requestBookData(bookId){
     //     description, 
     //     buy_links
     //   })
-      return await axios.get(`${BASE_URL}bookId`);
+      // return await axios.get(`${BASE_URL}${bookId}`);
       
-      
+      return await axios.get(`${BASE_URL}${bookId}`)
+  .then((resp) => {
+      return resp.data
+  } )
    }
 
 export { requestBookData }
