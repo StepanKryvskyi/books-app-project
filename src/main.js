@@ -1,4 +1,4 @@
-import './js/pagination';
+// import './js/pagination';
 import { createCategoryGallery, createBestsellersGallery} from './js/books-gallery-cat';
 import { galleryList, catList, loader} from './js/refs';
 import { addCategoryTitle } from './js/gallery-markup';
@@ -36,12 +36,13 @@ function onClickShowCatBooks(evt) {
 }
 
 
+
 galleryList.addEventListener("click", onBookClick)
 
  function onBookClick(evt){
   const bookId = evt.target.closest('.book-card').getAttribute('id');
   popUp.style.display = "block";
-  
+  document.body.style.overflow = "hidden";
     createBookCard(bookId)
 }
 onBookClick()
