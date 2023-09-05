@@ -1,6 +1,10 @@
-.categories{
-  margin-bottom: 35px;
+<<<<<<< HEAD
+.categories-lists{
+
 }
+=======
+
+>>>>>>> a35229d34c85bfd2f03811637a2253ece5e20b0e
 .book-list {
   max-width: 328px;
 }
@@ -26,12 +30,22 @@
     height: 228px;
     overflow-y: scroll;
     scroll-behavior: smooth;
+<<<<<<< HEAD
+    margin-bottom: 35px;
+=======
+    
+>>>>>>> a35229d34c85bfd2f03811637a2253ece5e20b0e
 }
 
 @media screen and (min-width: 768px) {
   .scroll-container {
-    width: 335px;
     height: 472px;
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .scroll-container {
+    width: 356px;
 
   }
 }
