@@ -1,33 +1,56 @@
-import {
-  createCategoryGallery,
-  createBestsellersGallery,
-} from './js/books-gallery-cat';
-import { galleryList, catList, catTitle } from './js/refs';
+
+// import './js/pagination';
+import { createCategoryGallery, createBestsellersGallery} from './js/books-gallery-cat';
+import { galleryList, catList, loader, bookCard} from './js/refs';
+import { onBtnThemeClick } from './js/dark-mode';
 import { addCategoryTitle } from './js/gallery-markup';
 import { createCategory } from './js/query-and-markup';
+import {  createMarkup, createBookCard } from './js/pop-up';
+
+// import { createShoppingCard } from './js/shopping-list';
+
+createCategoryGallery();
+// createShoppingCard();
+
+
+
 import { load } from './js/support-ukraine';
-import { onBtnThemeClick } from './js/dark-mode';
+
 // creating list of categories
 createCategory();
-// Creating bestsellers gallery
 
+// Creating bestsellers gallery
 createBestsellersGallery();
 
 // Creating books gallery by category
 
+load()
+
 catList.addEventListener('click', onClickShowCatBooks);
 
-function onClickShowCatBooks(evt) {
-  galleryList.innerHTML = '';
-  if (evt.target === catList.firstElementChild) {
-    addCategoryTitle('Best Sellers Books');
+onBtnThemeClick();
+
+function onClickShowCatBooks(evt) {    
+  galleryList.innerHTML = "";
+  loader.classList.toggle('visually-hidden');
+  if (evt.target.textContent === "All categories") {
+    addCategoryTitle('Best Sellers Books # #');
     createBestsellersGallery();
+    loader.classList.toggle('visually-hidden');
   } else {
-    const cat = evt.target.textContent;
+    const cat = evt.target.textContent; 
     addCategoryTitle(cat);
     createCategoryGallery(cat);
-  }
+    loader.classList.toggle('visually-hidden');
+}   
 }
 
-load();
-onBtnThemeClick();
+galleryList.addEventListener("click", onBookClick)
+
+ function onBookClick(evt){
+  const bookId = evt.target.closest('.book-card').getAttribute('id');
+  popUp.style.display = "block";
+  
+    createBookCard(bookId)
+}
+onBookClick()

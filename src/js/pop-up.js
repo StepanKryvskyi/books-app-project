@@ -1,73 +1,89 @@
-import axios from "axios";
-const popUp = document.getElementById("popUp");
-const openBtn = document.getElementById("openModalBtn");
+import { requestBookData } from './API-by-book-Id-info';
+
+const popUp = document.getElementById('popUp');
 const closeBtn = document.querySelector('.close');
-const modalCard = document.querySelector('.book-card')
-const bookList = document.getElementById("book-list")
-const BASE_URL = 'https://books-backend.p.goit.global/books/';
+const modalCard = document.querySelector('.book-card');
+const addBook = document.querySelector('.add-button');
+const removeBook = document.querySelector('.remove-button');
+const bookArr = [];
+let bookObj = null;
 
-
-let selectedBookData = null;
-
-bookList.addEventListener("click", onBookClick)
-function onBookClick(evt){
-  if(evt.target.tagName === "LI"){
-    const bookId = evt.target.id;
-    openModal(bookId)
-
-    if(selectedBookData){
-      createMarkup(selectedBookData)
-    }
-  }
-}
- async function getSelectedBookData(bookId){
-  const params = new URLSearchParams(
-    { _id: bookId,
-      book_image, 
-      title, 
-      author,
-      description, 
-      buy_links
-    })
-    const resp = await axios.get(`?${params}`);
-    const selectedBookData = resp.data
-    return selectedBookData
-
- }
-async function openModal(bookId) {
+async function createBookCard(bookId) {
   try {
-    selectedBookData = await getSelectedBookData(bookId);
-    console.log(selectedBookData);
-    addMarkup(selectedBookData);
+    const data = await requestBookData(bookId);
+
+    function addMarkup(data) {
+      modalCard.innerHTML = createMarkup(data);
+    }
+    addMarkup(data);
+    createBookObj(data);
   } catch (error) {
     console.error(error.message);
   }
-  popUp.style.display = "block";
 }
 
-function createMarkup({_id, book_image, title, author, buy_links, description}){
-  `<div class="cover-book">${book_image}</div>
+function createBookObj(_id, book_image, title, author, buy_links, description) {
+  bookObj = { _id, book_image, title, author, buy_links, description };
+}
+
+function createMarkup(data) {
+  const { _id, book_image, title, author, buy_links, description } = data;
+  return `<div class="book-id" id=${_id} >
+      <div class="cover-book"><img  src="${book_image}" alt="book-cover"></div>
+      <img  src="${book_image}" alt="book-cover">
       <div class="book-info">
         <h1 class="modal-title">${title}</h1>
         <h3 class="modal-author">${author}</h3>
         <p class="book-descr">${description}</p>
-        <ul class="sale-platforms-list">
-            ${buy_links}
+        <ul class="sale-platforms-list"><li class="shop" >
+            <a href="${buy_links[0].url}" class="shop-link" target=_blank>
+             <img
+            class="shops-item-icon"
+             src="../img/shopping-list-icon/company-1.png"
+            alt="Amazon-logo"
+              />
+             </a></li>
+             <li class="shop" >
+            <a href="${buy_links[1].url}" class="shop-link" target=_blank>
+             <img
+            class="shops-item-icon"
+             src="../img/shopping-list-icon/company-2.png"
+            alt="Apple-Books-logo"
+              />
+             </a></li>
+             <li class="shop" >
+            <a href="${buy_links[4].url}" class="shop-link" target=_blank>
+             <img
+            class="shops-item-icon"
+             src="../img/shopping-list-icon/company-3.png"
+            alt="Bookshop-logo"
+              />
+             </a></li>
         </ul>
-      </div>`
- }
- function addMarkup(selectedBookData){
-  modalCard.innerHTML = createMarkup(selectedBookData)  
- }
-
-
-closeBtn.onclick = function() {
-  popUp.style.display = "none";
+      </div>
+  </div>
+      `;
 }
 
-window.onclick = function(event) {
-  if (event.target == popUp) {
-    popUp.style.display = "none";
+addBook.addEventListener('click', onAddBookClick);
+
+function onAddBookClick(evt) {
+  if (evt.target.tagName === 'BUTTON') {
+    if (bookObj) {
+      bookArr.push(bookObj);
+      localStorage.setItem('books', JSON.stringify(bookArr));
+    }
   }
 }
 
+closeBtn.onclick = function () {
+  popUp.style.display = 'none';
+};
+
+window.onclick = function (event) {
+  if (event.target == popUp) {
+    popUp.style.display = 'none';
+  }
+};
+
+export { createBookCard, createMarkup };
