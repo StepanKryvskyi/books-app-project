@@ -10,7 +10,7 @@ const arraySopportUA = [
   {
     title: 'Project HOPE',
     url: 'https://www.projecthope.org/country/ukraine/',
-    img: '../img/support-img/image 2.png',
+    img: '../img/support-img/image-2.png',
   },
   {
     title: 'International Medical Corps',
