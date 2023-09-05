@@ -21,5 +21,6 @@ export function onBtnThemeClick() {
     document.body.classList.remove('darkmode');
     headerEL.classList.remove('header-dark');
     shopperIcon.classList.remove('shopper-dark');
+    bookEl.classList.remove('book-dark');
   }
 }
