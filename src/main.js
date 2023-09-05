@@ -1,6 +1,8 @@
+
 // import './js/pagination';
 import { createCategoryGallery, createBestsellersGallery} from './js/books-gallery-cat';
 import { galleryList, catList, loader, bookCard} from './js/refs';
+import { onBtnThemeClick } from './js/dark-mode';
 import { addCategoryTitle } from './js/gallery-markup';
 import { createCategory } from './js/query-and-markup';
 import {  createMarkup, createBookCard } from './js/pop-up';
@@ -25,6 +27,8 @@ createBestsellersGallery();
 load()
 
 catList.addEventListener('click', onClickShowCatBooks);
+
+onBtnThemeClick();
 
 function onClickShowCatBooks(evt) {    
   galleryList.innerHTML = "";
