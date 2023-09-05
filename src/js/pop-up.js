@@ -1,32 +1,33 @@
-import {requestBookData} from './API-by-book-Id-info'
+import { requestBookData } from './API-by-book-Id-info';
 
-const popUp = document.getElementById("popUp");
+const popUp = document.getElementById('popUp');
 const closeBtn = document.querySelector('.close');
 const modalCard = document.querySelector('.book-card');
 const addBook = document.querySelector('.add-button');
-const removeBook = document.querySelector('.remove-button')
-const bookArr = []
-
+const removeBook = document.querySelector('.remove-button');
+const bookArr = [];
+let bookObj = null;
 
 async function createBookCard(bookId) {
   try {
     const data = await requestBookData(bookId);
-    
-    function addMarkup(data){
-      modalCard.innerHTML = createMarkup(data)  
-     }
-    addMarkup(data)
-    createBookObj(data)
+
+    function addMarkup(data) {
+      modalCard.innerHTML = createMarkup(data);
+    }
+    addMarkup(data);
+    createBookObj(data);
   } catch (error) {
     console.error(error.message);
   }
-  
 }
-function createBookObj(_id, book_image, title, author, buy_links, description){
-  const bookObj = {_id, book_image, title, author, buy_links, description}
+
+function createBookObj(_id, book_image, title, author, buy_links, description) {
+  bookObj = { _id, book_image, title, author, buy_links, description };
 }
-function createMarkup(data){
-  const {_id, book_image, title, author, buy_links, description} = data;
+
+function createMarkup(data) {
+  const { _id, book_image, title, author, buy_links, description } = data;
   return `<div class="book-id" id=${_id} >
       <div class="cover-book"><img  src="${book_image}" alt="book-cover"></div>
       <img  src="${book_image}" alt="book-cover">
@@ -62,24 +63,27 @@ function createMarkup(data){
       </div>
   </div>
       `;
- }
-
- addBook.addEventListener("click", onAddBookClick)
-
- function onAddBookClick(evt){
-  if(evt.target.tagName === "BUTTON")
-  bookArr.push(bookObj)
-  localStorage.setItem("books", JSON.stringify(bookArr))
- }
-
-closeBtn.onclick = function() {
-  popUp.style.display = "none";
 }
 
-window.onclick = function(event) {
-  if (event.target == popUp) {
-    popUp.style.display = "none";
+addBook.addEventListener('click', onAddBookClick);
+
+function onAddBookClick(evt) {
+  if (evt.target.tagName === 'BUTTON') {
+    if (bookObj) {
+      bookArr.push(bookObj);
+      localStorage.setItem('books', JSON.stringify(bookArr));
+    }
   }
 }
 
-export { createBookCard, createMarkup}
+closeBtn.onclick = function () {
+  popUp.style.display = 'none';
+};
+
+window.onclick = function (event) {
+  if (event.target == popUp) {
+    popUp.style.display = 'none';
+  }
+};
+
+export { createBookCard, createMarkup };
