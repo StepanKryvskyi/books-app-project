@@ -4,9 +4,8 @@ import { galleryList, catList, loader, bookCard} from './js/refs';
 import { addCategoryTitle } from './js/gallery-markup';
 import { createCategory } from './js/query-and-markup';
 import {  createMarkup, createBookCard } from './js/pop-up';
-
-
 import { load } from './js/support-ukraine';
+
 // creating list of categories
 createCategory();
 
@@ -30,7 +29,6 @@ function onClickShowCatBooks(evt) {
     const cat = evt.target.textContent; 
     addCategoryTitle(cat);
     createCategoryGallery(cat);
-    // bookCard.classList.add('card');
     loader.classList.toggle('visually-hidden');
 }
     

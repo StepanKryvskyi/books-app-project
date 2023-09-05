@@ -26,10 +26,6 @@ async function createCategoryGallery(category) {
       return;
     }
     addMarkup(createBookMarkup(data));
-    if (!bookCard.classList.contains('card')) {
-    bookCard.classList.add('card');
-    }  
-    console.log(bookCard);
     loader.classList.toggle('visually-hidden');
   } catch (error) {
     console.error(error.message);
