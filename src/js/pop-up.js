@@ -1,22 +1,18 @@
-import { requestBookData } from './API-by-book-Id-info';
 
-const popUp = document.getElementById('popUp');
-const closeBtn = document.querySelector('.close');
-const modalCard = document.querySelector('.book-card');
-const addBook = document.querySelector('.add-button');
-const removeBook = document.querySelector('.remove-button');
-const bookArr = [];
-let bookObj = null;
+import {requestBookData} from './API-by-book-Id-info'
+import {popUp,closeBtn, modalCard, addBook, removeBook, bookArr} from './refs'
 
 async function createBookCard(bookId) {
   try {
     const data = await requestBookData(bookId);
 
-    function addMarkup(data) {
-      modalCard.innerHTML = createMarkup(data);
-    }
-    addMarkup(data);
-    createBookObj(data);
+    
+    function addMarkup(data){
+      modalCard.innerHTML = createMarkup(data)  
+     }
+     console.log(data);
+    addMarkup(data)
+    createBookObj(data)
   } catch (error) {
     console.error(error.message);
   }
@@ -26,11 +22,11 @@ function createBookObj(_id, book_image, title, author, buy_links, description) {
   bookObj = { _id, book_image, title, author, buy_links, description };
 }
 
-function createMarkup(data) {
-  const { _id, book_image, title, author, buy_links, description } = data;
+function createMarkup(data){
+  const {_id, book_image, title, author, buy_links, description,book_image_height, book_image_width} = data;
+
   return `<div class="book-id" id=${_id} >
-      <div class="cover-book"><img  src="${book_image}" alt="book-cover"></div>
-      <img  src="${book_image}" alt="book-cover">
+      <img class="book-cover-mw" src="${book_image}" alt="cover-book" >      
       <div class="book-info">
         <h1 class="modal-title">${title}</h1>
         <h3 class="modal-author">${author}</h3>
@@ -40,7 +36,7 @@ function createMarkup(data) {
              <img
             class="shops-item-icon"
              src="../img/shopping-list-icon/company-1.png"
-            alt="Amazon-logo"
+            alt="Amazon-logo" 
               />
              </a></li>
              <li class="shop" >
@@ -48,7 +44,7 @@ function createMarkup(data) {
              <img
             class="shops-item-icon"
              src="../img/shopping-list-icon/company-2.png"
-            alt="Apple-Books-logo"
+            alt="Apple-Books-logo" 
               />
              </a></li>
              <li class="shop" >
@@ -56,24 +52,23 @@ function createMarkup(data) {
              <img
             class="shops-item-icon"
              src="../img/shopping-list-icon/company-3.png"
-            alt="Bookshop-logo"
+            alt="Bookshop-logo" 
               />
              </a></li>
         </ul>
       </div>
+      
   </div>
       `;
 }
 
 addBook.addEventListener('click', onAddBookClick);
 
-function onAddBookClick(evt) {
-  if (evt.target.tagName === 'BUTTON') {
-    if (bookObj) {
-      bookArr.push(bookObj);
-      localStorage.setItem('books', JSON.stringify(bookArr));
-    }
-  }
+
+closeBtn.onclick = function() {
+  popUp.style.display = "none";
+  document.body.style.overflow = "";
+
 }
 
 closeBtn.onclick = function () {
@@ -82,8 +77,20 @@ closeBtn.onclick = function () {
 
 window.onclick = function (event) {
   if (event.target == popUp) {
-    popUp.style.display = 'none';
+
+    popUp.style.display = "none";
+    document.body.style.overflow = "";
   }
 };
 
-export { createBookCard, createMarkup };
+
+window.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') {
+    popUp.style.display = 'none';
+    document.body.style.overflow = "";
+  }
+})
+
+
+
+export { createBookCard, createMarkup}
