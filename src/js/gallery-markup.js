@@ -33,10 +33,26 @@ function createBestsellersMarkup(arr) {
   return arr
     .map(
       ({ list_name, books }) =>
+        window.innerWidth >= 1440 ? 
         `<div class="books-category">
           <p class="bestsellers-cat-title">${list_name}</p>
           <ul class="best-list">
             <li class="books-list">${createBookMarkup(books)}</li>
+          </ul>
+          <button class="btn-see-more" type="button" data-cat="${list_name}">SEE MORE</button>
+        </div>`
+          : window.innerWidth >= 768 ? 
+          `<div class="books-category">
+          <p class="bestsellers-cat-title">${list_name}</p>
+          <ul class="best-list">
+            <li class="books-list">${createBookMarkup(books.slice(0, 3))}</li>
+          </ul>
+          <button class="btn-see-more" type="button" data-cat="${list_name}">SEE MORE</button>
+        </div>`
+        : `<div class="books-category">
+          <p class="bestsellers-cat-title">${list_name}</p>
+          <ul class="best-list">
+            <li class="books-list">${createBookMarkup(books.slice(0, 1))}</li>
           </ul>
           <button class="btn-see-more" type="button" data-cat="${list_name}">SEE MORE</button>
         </div>`

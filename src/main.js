@@ -1,16 +1,19 @@
 // import './js/pagination';
 import { createCategoryGallery, createBestsellersGallery} from './js/books-gallery-cat';
-import { galleryList, catList, loader} from './js/refs';
+import { galleryList, catList, loader, bookCard} from './js/refs';
 import { addCategoryTitle } from './js/gallery-markup';
 import { createCategory } from './js/query-and-markup';
 import {  createMarkup, createBookCard } from './js/pop-up';
+
 // import { createShoppingCard } from './js/shopping-list';
 
 createCategoryGallery();
 // createShoppingCard();
 
 
+
 import { load } from './js/support-ukraine';
+
 // creating list of categories
 createCategory();
 
@@ -27,13 +30,13 @@ function onClickShowCatBooks(evt) {
   galleryList.innerHTML = "";
   loader.classList.toggle('visually-hidden');
   if (evt.target.textContent === "All categories") {
-        addCategoryTitle('Best Sellers Books # #');
+    addCategoryTitle('Best Sellers Books # #');
     createBestsellersGallery();
     loader.classList.toggle('visually-hidden');
   } else {
     const cat = evt.target.textContent; 
-     addCategoryTitle(cat);
-    createCategoryGallery(cat); 
+    addCategoryTitle(cat);
+    createCategoryGallery(cat);
     loader.classList.toggle('visually-hidden');
 }   
 }
