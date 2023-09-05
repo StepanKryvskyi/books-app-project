@@ -5,6 +5,12 @@
   margin-top: 40px;
 }
 
+@media screen and (max-width: 767px) {
+  .pagination-wrapper {
+    margin-top: 20px;
+  }
+}
+
 .tui-ico-ellipsis,
 .tui-ico-first,
 .tui-ico-last,
@@ -140,12 +146,13 @@
 .current-page.tui-last-child {
   border: 0.5px solid gray !important;
 }
-
-/* .current-page,
-.tui-is-selected,
-.tui-first-child {
-  margin-right: 8px;
-} */
+@media screen and (max-width: 767px) {
+  .current-page,
+  .tui-is-selected,
+  .tui-first-child {
+    margin-right: 10px;
+  }
+}
 
 .hide {
   display: none;
@@ -154,27 +161,16 @@
   display: flex;
 }
 
-/* @media screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .pagination-wrapper {
-    margin-top: 64px;
+    margin-top: 20px;
   }
-} */
+}
 
-/* @media screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .current-page,
   .tui-is-selected,
   .tui-first-child {
     margin-right: 10px;
   }
-} */
-
-/* @media screen and (max-width: 767px) {
-  .tui-next {
-    margin-right: 24px;
-    width: 44px;
-    height: 44px;
-    background-position: 9px center;
-    margin-left: 24px;
-    margin-right: 8px;
-  }
-} */
+}
