@@ -5,12 +5,12 @@ const arraySopportUA = [
   {
     title: 'Save the Children',
     url:'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-    img: '../img/support-img/image 1.png',
+    img: '/img/support-img/image-1.png',
   },
   {
     title: 'Project HOPE',
     url: 'https://www.projecthope.org/country/ukraine/',
-    img: '../img/support-img/image 2.png',
+    img: '../img/support-img/image-2.png',
   },
   {
     title: 'International Medical Corps',
