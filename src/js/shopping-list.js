@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    const apiUrl = "https://books-backend.p.goit.global/api/books";
+    const apiUrl = "https://books-backend.p.goit.global/books/bookId";
 
     fetch(apiUrl)
         .then(response => response.json())
@@ -113,3 +113,4 @@ function refreshShoppingListDisplay() {
         bookList.appendChild(card);
     });
 }
+

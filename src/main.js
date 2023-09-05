@@ -4,6 +4,14 @@ import { galleryList, catList, loader, bookCard} from './js/refs';
 import { addCategoryTitle } from './js/gallery-markup';
 import { createCategory } from './js/query-and-markup';
 import {  createMarkup, createBookCard } from './js/pop-up';
+
+// import { createShoppingCard } from './js/shopping-list';
+
+createCategoryGallery();
+// createShoppingCard();
+
+
+
 import { load } from './js/support-ukraine';
 
 // creating list of categories
@@ -30,18 +38,15 @@ function onClickShowCatBooks(evt) {
     addCategoryTitle(cat);
     createCategoryGallery(cat);
     loader.classList.toggle('visually-hidden');
+}   
 }
-    
-}
-
 
 galleryList.addEventListener("click", onBookClick)
 
  function onBookClick(evt){
-  // const bookId = evt.target.getAtribute("id");
+  const bookId = evt.target.closest('.book-card').getAttribute('id');
   popUp.style.display = "block";
-  const bookId = "643282b1e85766588626a0dc";
-  console.log(bookId);
+  
     createBookCard(bookId)
 }
 onBookClick()

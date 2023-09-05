@@ -1,3 +1,6 @@
+.categories{
+  margin-bottom: 35px;
+}
 .book-list {
   max-width: 328px;
 }
@@ -27,7 +30,7 @@
 
 @media screen and (min-width: 768px) {
   .scroll-container {
-    width: 337px;
+    width: 335px;
     height: 472px;
 
   }
