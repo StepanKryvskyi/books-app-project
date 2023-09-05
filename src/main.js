@@ -1,16 +1,14 @@
 // import './js/pagination';
 import { createCategoryGallery, createBestsellersGallery} from './js/books-gallery-cat';
-import { galleryList, catList, loader, bookCard} from './js/refs';
+import { galleryList, catList, loader, btnSeeMore} from './js/refs';
 import { addCategoryTitle } from './js/gallery-markup';
 import { createCategory } from './js/query-and-markup';
-import {  createMarkup, createBookCard } from './js/pop-up';
+import { createMarkup, createBookCard } from './js/pop-up';
 
 // import { createShoppingCard } from './js/shopping-list';
 
 createCategoryGallery();
 // createShoppingCard();
-
-
 
 import { load } from './js/support-ukraine';
 
@@ -38,7 +36,17 @@ function onClickShowCatBooks(evt) {
     addCategoryTitle(cat);
     createCategoryGallery(cat);
     loader.classList.toggle('visually-hidden');
-}   
+  }   
+}
+
+btnSeeMore.addEventListener('click', onClickSeeMore);
+
+function onClickSeeMore(evt) {
+  galleryList.innerHTML = "";
+  loader.classList.toggle('visually-hidden');
+  const catName = evt.target.dataset.cat;  
+  addCategoryTitle(catName);
+  createCategoryGallery(catName);
 }
 
 galleryList.addEventListener("click", onBookClick)
@@ -49,4 +57,5 @@ galleryList.addEventListener("click", onBookClick)
   
     createBookCard(bookId)
 }
+
 onBookClick()
