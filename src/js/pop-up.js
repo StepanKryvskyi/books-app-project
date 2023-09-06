@@ -62,7 +62,7 @@ function createMarkup(data){
       `;
 }
 
-addBook.addEventListener('click', onAddBookClick);
+// addBook.addEventListener('click', onAddBookClick);
 
 
 closeBtn.onclick = function() {

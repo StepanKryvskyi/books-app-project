@@ -1,6 +1,6 @@
 // import './js/pagination';
 import { createCategoryGallery, createBestsellersGallery} from './js/books-gallery-cat';
-import { galleryList, catList, loader, bookCard} from './js/refs';
+import {  galleryList, catList, catTitle, booksBox, loader, bookCard, btnSeeMore} from './js/refs';
 import { onBtnThemeClick } from './js/dark-mode';
 import { addCategoryTitle } from './js/gallery-markup';
 import { createCategory } from './js/query-and-markup';
@@ -42,6 +42,9 @@ function onClickShowCatBooks(evt) {
   }   
 }
 
+onBookClick()
+
+
 btnSeeMore.addEventListener('click', onClickSeeMore);
 
 function onClickSeeMore(evt) {
@@ -61,4 +64,3 @@ galleryList.addEventListener("click", onBookClick)
   document.body.style.overflow = "hidden";
     createBookCard(bookId)
 }
-onBookClick()
