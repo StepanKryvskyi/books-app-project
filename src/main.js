@@ -1,4 +1,3 @@
-
 // import './js/pagination';
 import { createCategoryGallery, createBestsellersGallery} from './js/books-gallery-cat';
 import { galleryList, catList, loader, btnToTop} from './js/refs';
@@ -8,12 +7,14 @@ import { createCategory } from './js/query-and-markup';
 import { createMarkup, createBookCard } from './js/pop-up';
 import {scrollTop} from './js/scroll-to-top'
 
-// import { createShoppingCard } from './js/shopping-list';
+import {  galleryList, catList, catTitle, booksBox, loader, bookCard, btnSeeMore } from './js/refs';
+
+import { createShoppingCard } from './js/shopping-list';
 
 scrollTop();
 
 createCategoryGallery();
-// createShoppingCard();
+createShoppingCard();
 
 import { load } from './js/support-ukraine';
 
@@ -29,22 +30,33 @@ load()
 
 catList.addEventListener('click', onClickShowCatBooks);
 
-onBtnThemeClick();
-
 function onClickShowCatBooks(evt) {    
   galleryList.innerHTML = "";
   loader.classList.toggle('visually-hidden');
   if (evt.target.textContent === "All categories") {
-    addCategoryTitle('Best Sellers Books # #');
+        addCategoryTitle('Best Sellers Books # #');
     createBestsellersGallery();
     loader.classList.toggle('visually-hidden');
   } else {
+    
     const cat = evt.target.textContent;
     addCategoryTitle(cat);
     createCategoryGallery(cat);
+
     loader.classList.toggle('visually-hidden');
-  }   
 }
+    
+}
+
+galleryList.addEventListener("click", onBookClick)
+
+ function onBookClick(evt){
+  const bookId = evt.target.closest('.book-card').getAttribute('id');
+  popUp.style.display = "block";
+  document.body.style.overflow = "hidden";
+    createBookCard(bookId)
+}
+onBookClick()
 
 btnSeeMore.addEventListener('click', onClickSeeMore);
 
@@ -57,12 +69,4 @@ function onClickSeeMore(evt) {
   loader.classList.toggle('visually-hidden');
 }
 
-galleryList.addEventListener("click", onBookClick)
-
- function onBookClick(evt){
-  const bookId = evt.target.closest('.book-card').getAttribute('id');
-  popUp.style.display = "block";
-  
-    createBookCard(bookId)
-}
 
