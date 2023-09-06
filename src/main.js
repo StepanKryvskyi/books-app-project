@@ -1,4 +1,3 @@
-
 import { pagination } from './js/pagination';
 import { createCategoryGallery, createBestsellersGallery} from './js/books-gallery-cat';
 import { onBtnThemeClick } from './js/dark-mode';
@@ -59,17 +58,28 @@ galleryList.addEventListener("click", onBookClick)
     createBookCard(bookId)
 }
 onBookClick()
+// Добавляем обработчик клика на кнопку "SEE MORE"
+document.addEventListener('click', function (event) {
+  if (event.target.classList.contains('btn-see-more')) {
+    onSeeMoreClick(event);
+  }
+});
 
-btnSeeMore.addEventListener('click', onClickSeeMore);
+document.addEventListener('click', function (event) {
+  if (event.target.classList.contains('btn-see-more')) {
+    onSeeMoreClick(event);
+  }
+});
 
-function onClickSeeMore(evt) {
-  galleryList.innerHTML = "";
-  loader.classList.toggle('visually-hidden');
-  const catName = evt.target.dataset.cat;
-  addCategoryTitle(`${ catName } # #`);
-  createCategoryGallery(catName);
+function onSeeMoreClick(event) {
+  const category = event.target.getAttribute('data-cat');
+
+  if (category === 'All categories') {
+    addCategoryTitle('Best Sellers Books # #');
+    createBestsellersGallery();
+  } else {
+    addCategoryTitle(category);
+    createCategoryGallery(category);
+  }
   loader.classList.toggle('visually-hidden');
 }
-
-
-
