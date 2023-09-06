@@ -24,22 +24,24 @@ function createMarkup(data){
   return `<div class="book-id" id=${_id} >
       <img class="book-cover-mw" src="${book_image}" alt="cover-book" >      
       <div class="book-info">
-        <h1 class="modal-title">${title}</h1>
-        <h3 class="modal-author">${author}</h3>
+        <div class="thumb">
+          <h1 class="modal-title">${title}</h1>
+          <h3 class="modal-author">${author}</h3>
+        </div>
         <p class="book-descr">${description}</p>
         <ul class="sale-platforms-list"><li class="shop" >
             <a href="${buy_links[0].url}" class="shop-link" target=_blank>
-             <img
+            <img
             class="shops-item-icon"
-             src="../img/shopping-list-icon/company-1.png"
-            alt="Amazon-logo" 
+             src="./img/popUp/amazon.png"
+            alt="Amazone-logo" 
               />
              </a></li>
              <li class="shop" >
             <a href="${buy_links[1].url}" class="shop-link" target=_blank>
              <img
             class="shops-item-icon"
-             src="../img/shopping-list-icon/company-2.png"
+             src="./img/popUp/applebooks.png"
             alt="Apple-Books-logo" 
               />
              </a></li>
@@ -47,7 +49,7 @@ function createMarkup(data){
             <a href="${buy_links[4].url}" class="shop-link" target=_blank>
              <img
             class="shops-item-icon"
-             src="../img/shopping-list-icon/company-3.png"
+             src="./img/popUp/bookshop.png"
             alt="Bookshop-logo" 
               />
              </a></li>
