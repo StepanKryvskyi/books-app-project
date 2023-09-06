@@ -71,6 +71,8 @@ function createMarkup(data){
  }
 
 closeBtn.onclick = function() {
+  // modalEl.classList.remove('active');
+	// popUp.classList.remove('active');
   popUp.style.display = "none";
   document.body.style.overflow = "";
 }
