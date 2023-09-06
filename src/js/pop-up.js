@@ -1,63 +1,94 @@
-import axios from "axios";
-import {getSelectedBookData} from './API-by-book-Id-info'
+import {requestBookData} from './API-by-book-Id-info'
+import {popUp,closeBtn, modalCard, addBook, removeBook, bookArr} from './refs'
 
-const popUp = document.getElementById("popUp");
-const closeBtn = document.querySelector('.close');
-const modalCard = document.querySelector('.book-card');
-const galleryList = document.querySelector('.gallery');
-
-
-
-let selectedBookData = null;
-
-// galleryList.addEventListener("click", onBookClick)
-export function onBookClick(){
-  // const bookId = evt.target.getAtributeById(id);
-  const bookId = "643282b1e85766588626a0dc";
-  console.log(bookId);
-    openModal(bookId)
-
-    if(selectedBookData){
-      createMarkup(selectedBookData)
-    }
-  
-}
-
-
-async function openModal(bookId) {
+async function createBookCard(bookId) {
   try {
-    selectedBookData = await getSelectedBookData(bookId);
-    console.log(selectedBookData);
-    addMarkup(selectedBookData);
+    const data = await requestBookData(bookId);
+    
+    function addMarkup(data){
+      modalCard.innerHTML = createMarkup(data)  
+     }
+     console.log(data);
+    addMarkup(data)
+    createBookObj(data)
   } catch (error) {
     console.error(error.message);
   }
-  popUp.style.display = "block";
+  
 }
-
-function createMarkup({_id, book_image, title, author, buy_links, description}){
-  `<div class="cover-book">${book_image}</div>
+function createBookObj(_id, book_image, title, author, buy_links, description){
+  const bookObj = {_id, book_image, title, author, buy_links, description}
+}
+function createMarkup(data){
+  const {_id, book_image, title, author, buy_links, description,book_image_height, book_image_width} = data;
+  return `<div class="book-id" id=${_id} >
+      <img class="book-cover-mw" src="${book_image}" alt="cover-book" >      
       <div class="book-info">
-        <h1 class="modal-title">${title}</h1>
-        <h3 class="modal-author">${author}</h3>
+        <div class="thumb">
+          <h1 class="modal-title">${title}</h1>
+          <h3 class="modal-author">${author}</h3>
+        </div>
         <p class="book-descr">${description}</p>
-        <ul class="sale-platforms-list">
-            ${buy_links}
+        <ul class="sale-platforms-list"><li class="shop" >
+            <a href="${buy_links[0].url}" class="shop-link" target=_blank>
+
+            <img
+            class="shops-item-icon"
+             src="./img/popUp/amazon.png"
+            alt="Amazone-logo" 
+              />
+
+             </a></li>
+             <li class="shop" >
+            <a href="${buy_links[1].url}" class="shop-link" target=_blank>
+             <img
+            class="shops-item-icon"
+             src="./img/popUp/applebooks.png"
+            alt="Apple-Books-logo" 
+              />
+             </a></li>
+             <li class="shop" >
+            <a href="${buy_links[4].url}" class="shop-link" target=_blank>
+             <img
+            class="shops-item-icon"
+             src="./img/popUp/bookshop.png"
+            alt="Bookshop-logo" 
+              />
+             </a></li>
         </ul>
-      </div>`
- }
- function addMarkup(selectedBookData){
-  modalCard.innerHTML = createMarkup(selectedBookData)  
+      </div>
+      
+  </div>
+      `;
  }
 
+ addBook.addEventListener("click", onAddBookClick)
+
+ function onAddBookClick(evt){
+  if(evt.target.tagName === "BUTTON")
+  bookArr.push(bookObj)
+  localStorage.setItem("books", JSON.stringify(bookArr))
+ }
 
 closeBtn.onclick = function() {
   popUp.style.display = "none";
+  document.body.style.overflow = "";
 }
 
 window.onclick = function(event) {
   if (event.target == popUp) {
     popUp.style.display = "none";
+    document.body.style.overflow = "";
   }
 }
 
+window.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') {
+    popUp.style.display = 'none';
+    document.body.style.overflow = "";
+  }
+})
+
+
+
+export { createBookCard, createMarkup}

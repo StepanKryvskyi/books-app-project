@@ -8,10 +8,14 @@
 
 @import url('./shopping-list.css');
 
+@import url('./dark-mode.css');
+
 :root {
   --main-cl: #4f2ee8;
   --text-cl: #111111;
   --secondary-text-cl: #b4afaf;
+  --active-cl: #EAC645;
+  
 
   font-family: 'DM Sans', sans-serif;
   font-size: 16px;

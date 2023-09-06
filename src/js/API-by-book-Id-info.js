@@ -2,7 +2,7 @@ import axios from "axios";
 
 const BASE_URL = 'https://books-backend.p.goit.global/books/';
 
-async function getSelectedBookData(bookId){
+async function requestBookData(bookId){
 
     // const params = new URLSearchParams(
     //   { _id: bookId,
@@ -12,11 +12,13 @@ async function getSelectedBookData(bookId){
     //     description, 
     //     buy_links
     //   })
-      const resp = await axios.get(`${BASE_URL}bookId`);
-      const selectedBookData = resp.data
-      console.log(selectedBookData);
-      return selectedBookData
+      // return await axios.get(`${BASE_URL}${bookId}`);
       
+      return await axios.get(`${BASE_URL}${bookId}`)
+  .then((resp) => {
+      return resp.data
+  } )
    }
 
-export { getSelectedBookData }
+export { requestBookData }
+
