@@ -27,6 +27,23 @@
     color: #4F2EE8;
 }
 
+@media screen and (max-width: 1439px) {
+    .container-support {
+        display: none;
+    }
+}
+
+.container-support {
+    position: relative;
+
+    
+    border-radius: 16px;
+    width: 335px;
+    height: 352px;
+    background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%) 
+
+}
+
 .shopping-list-empty {
     display: flex;
     justify-content: center;
