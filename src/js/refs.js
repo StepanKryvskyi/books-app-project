@@ -5,5 +5,6 @@ const booksBox = document.querySelector('.books');
 const loader = document.querySelector('.loader');
 const bookCard = document.querySelector('.book-card');
 const btnSeeMore = document.querySelector('.btn-see-more');
+const btnToTop = document.querySelector('.to-top');
 
-export { galleryList, catList, catTitle, booksBox, loader, bookCard, btnSeeMore};
+export { galleryList, catList, catTitle, booksBox, loader, bookCard, btnSeeMore, btnToTop};
