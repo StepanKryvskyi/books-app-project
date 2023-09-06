@@ -1,11 +1,10 @@
 // import './js/pagination';
 import { createCategoryGallery, createBestsellersGallery} from './js/books-gallery-cat';
-import { galleryList, catList, loader, btnToTop} from './js/refs';
 import { onBtnThemeClick } from './js/dark-mode';
 import { addCategoryTitle } from './js/gallery-markup';
 import { createCategory } from './js/query-and-markup';
 import { createMarkup, createBookCard } from './js/pop-up';
-import {scrollTop} from './js/scroll-to-top'
+import {scrollTop} from './js/scroll-to-top';
 
 import {  galleryList, catList, catTitle, booksBox, loader, bookCard, btnSeeMore } from './js/refs';
 
