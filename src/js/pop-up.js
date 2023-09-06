@@ -1,11 +1,9 @@
-
 import {requestBookData} from './API-by-book-Id-info'
 import {popUp,closeBtn, modalCard, addBook, removeBook, bookArr} from './refs'
 
 async function createBookCard(bookId) {
   try {
     const data = await requestBookData(bookId);
-
     
     function addMarkup(data){
       modalCard.innerHTML = createMarkup(data)  
@@ -16,15 +14,13 @@ async function createBookCard(bookId) {
   } catch (error) {
     console.error(error.message);
   }
+  
 }
-
-function createBookObj(_id, book_image, title, author, buy_links, description) {
-  bookObj = { _id, book_image, title, author, buy_links, description };
+function createBookObj(_id, book_image, title, author, buy_links, description){
+  const bookObj = {_id, book_image, title, author, buy_links, description}
 }
-
 function createMarkup(data){
   const {_id, book_image, title, author, buy_links, description,book_image_height, book_image_width} = data;
-
   return `<div class="book-id" id=${_id} >
       <img class="book-cover-mw" src="${book_image}" alt="cover-book" >      
       <div class="book-info">
@@ -33,11 +29,9 @@ function createMarkup(data){
         <p class="book-descr">${description}</p>
         <ul class="sale-platforms-list"><li class="shop" >
             <a href="${buy_links[0].url}" class="shop-link" target=_blank>
-             <img
-            class="shops-item-icon"
-             src="../img/shopping-list-icon/company-1.png"
-            alt="Amazon-logo" 
-              />
+            <svg class="" width="62" height="19">
+            <use href="../img/popUp/pop-up-symbol-defs (1).svg#icon-amazone"></use>
+          </svg>
              </a></li>
              <li class="shop" >
             <a href="${buy_links[1].url}" class="shop-link" target=_blank>
@@ -60,29 +54,27 @@ function createMarkup(data){
       
   </div>
       `;
-}
+ }
 
-// addBook.addEventListener('click', onAddBookClick);
+ addBook.addEventListener("click", onAddBookClick)
 
+ function onAddBookClick(evt){
+  if(evt.target.tagName === "BUTTON")
+  bookArr.push(bookObj)
+  localStorage.setItem("books", JSON.stringify(bookArr))
+ }
 
 closeBtn.onclick = function() {
   popUp.style.display = "none";
   document.body.style.overflow = "";
-
 }
 
-closeBtn.onclick = function () {
-  popUp.style.display = 'none';
-};
-
-window.onclick = function (event) {
+window.onclick = function(event) {
   if (event.target == popUp) {
-
     popUp.style.display = "none";
     document.body.style.overflow = "";
   }
-};
-
+}
 
 window.addEventListener('keydown', function (event) {
   if (event.key === 'Escape') {
