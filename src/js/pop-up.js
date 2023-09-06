@@ -79,6 +79,13 @@ function onAddBookClick(evt) {
   }
 }
 
+
+// closeBtn.onclick = function() {
+//   // modalEl.classList.remove('active');
+// 	// popUp.classList.remove('active');
+//   popUp.style.display = "none";
+//   document.body.style.overflow = "";}
+
 function onRemoveBookClick(evt) {
   if (evt.target.tagName === 'BUTTON') {
     const bookIdToRemove = bookObj._id;

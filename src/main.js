@@ -6,6 +6,7 @@ import { createCategory } from './js/query-and-markup';
 import { createMarkup, createBookCard } from './js/pop-up';
 import {scrollTop} from './js/scroll-to-top';
 
+
 import {  galleryList, catList, catTitle, booksBox, loader, bookCard, btnSeeMore } from './js/refs';
 
 import { createShoppingCard } from './js/shopping-list';
@@ -52,8 +53,11 @@ function onClickShowCatBooks(evt) {
 galleryList.addEventListener("click", onBookClick)
 
  function onBookClick(evt){
+  evt.preventDefault();
   const bookId = evt.target.closest('.book-card').getAttribute('id');
-  popUp.style.display = "block";
+  // popUp.style.display = "block";
+  modalEl.classList.add('active');
+	popUp.classList.add('active');
   document.body.style.overflow = "hidden";
     createBookCard(bookId)
 }
