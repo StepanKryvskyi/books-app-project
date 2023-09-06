@@ -34,20 +34,26 @@ ${t}
 </li>`).join(" ")}const xn="https://books-backend.p.goit.global/books/";async function Qe(e){return await K.get(`${xn}${e}`).then(t=>t.data)}async function Bn(e){try{let r=function(s){Sn.innerHTML=Pn(s)};var t=r;const n=await Qe(e);console.log(n),r(n)}catch(n){console.error(n.message)}}function Pn(e){const{_id:t,book_image:n,title:r,author:s,buy_links:o,description:i,book_image_height:l,book_image_width:u}=e;return`<div class="book-id" id=${t} >
       <img class="book-cover-mw" src="${n}" alt="cover-book" >      
       <div class="book-info">
-        <h1 class="modal-title">${r}</h1>
-        <h3 class="modal-author">${s}</h3>
+        <div class="thumb">
+          <h1 class="modal-title">${r}</h1>
+          <h3 class="modal-author">${s}</h3>
+        </div>
         <p class="book-descr">${i}</p>
         <ul class="sale-platforms-list"><li class="shop" >
             <a href="${o[0].url}" class="shop-link" target=_blank>
-            <svg class="" width="62" height="19">
-            <use href="../img/popUp/pop-up-symbol-defs (1).svg#icon-amazone"></use>
-          </svg>
+
+            <img
+            class="shops-item-icon"
+             src="./img/popUp/amazon.png"
+            alt="Amazone-logo" 
+              />
+
              </a></li>
              <li class="shop" >
             <a href="${o[1].url}" class="shop-link" target=_blank>
              <img
             class="shops-item-icon"
-             src="../img/shopping-list-icon/company-2.png"
+             src="./img/popUp/applebooks.png"
             alt="Apple-Books-logo" 
               />
              </a></li>
@@ -55,7 +61,7 @@ ${t}
             <a href="${o[4].url}" class="shop-link" target=_blank>
              <img
             class="shops-item-icon"
-             src="../img/shopping-list-icon/company-3.png"
+             src="./img/popUp/bookshop.png"
             alt="Bookshop-logo" 
               />
              </a></li>

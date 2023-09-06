@@ -36,14 +36,14 @@
     />
     <title>Bookshelf</title>
     
-    <script type="module" crossorigin src="/books-app-project/assets/main-1a449ee8.js"></script>
-    <link rel="stylesheet" href="/books-app-project/assets/main-deea32df.css">
+    <script type="module" crossorigin src="/books-app-project/assets/main-3735097d.js"></script>
+    <link rel="stylesheet" href="/books-app-project/assets/main-69eb7da6.css">
   </head>
   <body>
     <header class="header" id="header">
   <a href="./index.html" class="logo-link"
     ><svg class="" width="109" height="28">
-      <use href="/books-app-project/assets/icons-908552a0.svg#logo-icon"></use></svg
+      <use href="/books-app-project/assets/icons-0bd4d2b3.svg#logo-icon"></use></svg
   ></a>
 
   <nav class="nav">
@@ -54,7 +54,7 @@
       <li class="nav-item">
         <a href="./shopping-list.html" class="nav-link"
           >SHOPPING LIST<svg class="shoper-icon" width="20" height="20">
-            <use href="/books-app-project/assets/icons-908552a0.svg#shopper-icon"></use></svg
+            <use href="/books-app-project/assets/icons-0bd4d2b3.svg#shopper-icon"></use></svg
         ></a>
       </li>
     </ul>
@@ -85,13 +85,22 @@
       </section>
           <div id="popUp" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="book-card-mw" >
+            <button class="close" type="button">
+                <svg class="close-icon" width="20" height="20">
+                  <use href="/books-app-project/assets/icons-0bd4d2b3.svg#icon-close-x"></use>
+                </svg>
+            </button>
+            <!-- <span class="close">&times;</span> -->
+            <div class="modal-body">
+                <div class="book-card-mw" >
             
+                </div>
+                <div>
+                    <button class="add-button" type="submit">ADD TO SHOPPING LIST</button>
+                    <button class="remove-button" type="submit">REMOVE FROM THE SHOPPING LIST</button>   
+                </div>   
             </div>
-            <button class="add-button" type="submit">ADD TO SHOPPING LIST</button>
-            <button class="remove-button" type="submit">REMOVE FROM THE SHOPPING LIST</button>   
-            </div>           
+                    
 
         </div>        
     </div>
