@@ -1,3 +1,4 @@
+
 .book-list {
   max-width: 328px;
 }
@@ -23,11 +24,12 @@
     height: 228px;
     overflow-y: scroll;
     scroll-behavior: smooth;
+    
 }
 
 @media screen and (min-width: 768px) {
   .scroll-container {
-    width: 337px;
+    width: 335px;
     height: 472px;
 
   }
