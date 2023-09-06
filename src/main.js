@@ -62,3 +62,4 @@ function onClickSeeMore(evt) {
   createCategoryGallery(catName);
 }
 
+

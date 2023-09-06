@@ -3,7 +3,7 @@ const themeToggleBtn = document.querySelector('#themeToggle');
 
 // Header Item
 const headerEL = document.querySelector('#header');
-const shopperIcon = document.querySelector('.shopper-icon');
+const shoperIcon = document.querySelector('.shoper-icon');
 
 // Book List Item
 const bookEl = document.querySelector('.book-list');
@@ -15,12 +15,16 @@ export function onBtnThemeClick() {
   if (themeToggleBtn.checked) {
     document.body.classList.add('darkmode');
     headerEL.classList.add('header-dark');
-    // shopperIcon.classList.add('shopper-dark');
+
+    shoperIcon.classList.add('shoper-dark');
+
     bookEl.classList.add('book-dark');
   } else {
     document.body.classList.remove('darkmode');
     headerEL.classList.remove('header-dark');
-    // shopperIcon.classList.remove('shopper-dark');
+
+    shoperIcon.classList.remove('shoper-dark');
+
     bookEl.classList.remove('book-dark');
   }
 }
