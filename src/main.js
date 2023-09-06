@@ -1,4 +1,5 @@
-// import './js/pagination';
+
+import { pagination } from './js/pagination';
 import { createCategoryGallery, createBestsellersGallery} from './js/books-gallery-cat';
 import { onBtnThemeClick } from './js/dark-mode';
 import { addCategoryTitle } from './js/gallery-markup';
@@ -15,6 +16,7 @@ scrollTop();
 createCategoryGallery();
 createShoppingCard();
 
+
 import { load } from './js/support-ukraine';
 
 // creating list of categories
@@ -25,9 +27,10 @@ createBestsellersGallery();
 
 // Creating books gallery by category
 
-load()
+load();
 
 catList.addEventListener('click', onClickShowCatBooks);
+
 
 function onClickShowCatBooks(evt) {    
   galleryList.innerHTML = "";
@@ -67,5 +70,6 @@ function onClickSeeMore(evt) {
   createCategoryGallery(catName);
   loader.classList.toggle('visually-hidden');
 }
+
 
 
