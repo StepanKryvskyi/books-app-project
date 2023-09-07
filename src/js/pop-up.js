@@ -1,6 +1,10 @@
 import {requestBookData} from './API-by-book-Id-info'
 import {popUp,closeBtn, modalCard, addBook, removeBook, modalEl} from './refs'
 
+const amazon = new URL('../img/popUp/amazon.png', import.meta.url);
+const appleBooks = new URL('../img/popUp/applebooks.png', import.meta.url);
+const bookShop = new URL('../img/popUp/bookshop.png', import.meta.url);
+
 async function createBookCard(bookId) {
   try {
     const data = await requestBookData(bookId);
@@ -30,7 +34,7 @@ function createMarkup(data){
 
             <img
             class="shops-item-icon"
-             src="./img/popUp/amazon.png"
+             src="${amazon}"
             alt="Amazone-logo" 
               />
 
@@ -39,7 +43,7 @@ function createMarkup(data){
             <a href="${buy_links[1].url}" class="shop-link" target=_blank>
              <img
             class="shops-item-icon"
-             src="./img/popUp/applebooks.png"
+             src="${appleBooks}"
             alt="Apple-Books-logo" 
               />
              </a></li>
@@ -47,7 +51,7 @@ function createMarkup(data){
             <a href="${buy_links[4].url}" class="shop-link" target=_blank>
              <img
             class="shops-item-icon"
-             src="./img/popUp/bookshop.png"
+             src="${bookShop}"
             alt="Bookshop-logo" 
               />
              </a></li>
