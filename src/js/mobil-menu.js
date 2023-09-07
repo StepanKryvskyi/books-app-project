@@ -12,3 +12,5 @@ function closeMenu() {
 
 menuToggleBtn.addEventListener('click', openMenu);
 closeMenuBtn.addEventListener('click', closeMenu);
+
+closeMenu();
