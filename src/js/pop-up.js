@@ -1,5 +1,5 @@
 import {requestBookData} from './API-by-book-Id-info'
-import {popUp,closeBtn, modalCard, addBook, removeBook, bookArr} from './refs'
+import {popUp,closeBtn, modalCard, addBook, removeBook, bookArr, modalEl} from './refs'
 
 async function createBookCard(bookId) {
   try {
@@ -71,21 +71,24 @@ function createMarkup(data){
  }
 
 closeBtn.onclick = function() {
-  popUp.style.display = "none";
-  document.body.style.overflow = "";
+    modalEl.classList.remove('active');
+	  popUp.classList.remove('active');
+    document.body.classList.remove('modal-open')
 }
 
 window.onclick = function(event) {
   if (event.target == popUp) {
-    popUp.style.display = "none";
-    document.body.style.overflow = "";
+    modalEl.classList.remove('active');
+	  popUp.classList.remove('active');
+    document.body.classList.remove('modal-open')
   }
 }
 
 window.addEventListener('keydown', function (event) {
   if (event.key === 'Escape') {
-    popUp.style.display = 'none';
-    document.body.style.overflow = "";
+    modalEl.classList.remove('active');
+	  popUp.classList.remove('active');
+    document.body.classList.remove('modal-open')
   }
 })
 

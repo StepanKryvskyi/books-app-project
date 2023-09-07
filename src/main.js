@@ -1,6 +1,6 @@
 // import './js/pagination';
 import { createCategoryGallery, createBestsellersGallery} from './js/books-gallery-cat';
-import {  galleryList, catList, catTitle, booksBox, loader, bookCard, btnSeeMore} from './js/refs';
+import {  galleryList, catList, catTitle, booksBox, loader, bookCard, btnSeeMore, modalEl} from './js/refs';
 import { onBtnThemeClick } from './js/dark-mode';
 import { addCategoryTitle } from './js/gallery-markup';
 import { createCategory } from './js/query-and-markup';
@@ -46,8 +46,9 @@ galleryList.addEventListener("click", onBookClick)
 
  function onBookClick(evt){
   const bookId = evt.target.closest('.book-card').getAttribute('id');
-  popUp.style.display = "block";
-  document.body.style.overflow = "hidden";
+    modalEl.classList.add('active');
+	  popUp.classList.add('active');
+    document.body.classList.add('modal-open')
     createBookCard(bookId)
 }
 onBookClick()
