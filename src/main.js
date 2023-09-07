@@ -44,6 +44,7 @@ function onClickShowCatBooks(evt) {
 
 galleryList.addEventListener("click", onBookClick)
 
+
  function onBookClick(evt){
   evt.preventDefault()
   const bookId = evt.target.closest('.book-card').getAttribute('id');
