@@ -1,6 +1,6 @@
 import { makeRequestByCategory, makeRequestAllBooks } from './API-by-categories';
 import { createBookMarkup, createBestsellersMarkup } from './gallery-markup';
-import { galleryList, loader, bookCard} from './refs';
+import { galleryList, loader} from './refs';
 
 // Creating a gallery of bestsellers book all categories
 async function createBestsellersGallery() {

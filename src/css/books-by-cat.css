@@ -38,6 +38,10 @@
   }
 }
 
+.books {
+  overflow-x: hidden;
+}
+
 .best-gallery {
   display: flex;
   flex-direction: column;
@@ -54,6 +58,16 @@
   color: var(--secondary-text-cl);
 }
 
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .category-title {
   margin-bottom: 40px;
   font-weight: 700;
@@ -61,10 +75,9 @@
   line-height: 1.2;
   letter-spacing: -0.04em;
   text-align: left;
-}
-
-.books {
-  margin-bottom: 40px;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-name: slideInLeft;
 }
 
 .book-card {
@@ -175,10 +188,6 @@
   margin-bottom: 20px;
   }
 
-  .books {
-    margin-bottom: 100px;
-  }
-
   .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -255,4 +264,32 @@
 .btn-see-more:focus {
   background-color: var(--main-cl);
   color: #fff;
+}
+
+.to-top {
+  opacity: 0;
+  position: fixed;
+  right: 20px;
+  bottom: 50px;
+  cursor: pointer;
+  display: block;
+  font-size: 25px;
+  color: #fff;
+  border: 2px;
+  background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 105%);
+  padding: 15px 10px;
+  border-radius: 10px;
+  z-index: 15;
+
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.to-top.show {
+  opacity: 1;
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.to-top:hover,
+.to-top:focus {
+  scale: 0.9
 }

@@ -4,13 +4,14 @@ import {popUp,closeBtn, modalCard, addBook, removeBook, bookArr, modalEl} from '
 async function createBookCard(bookId) {
   try {
     const data = await requestBookData(bookId);
-    
-    function addMarkup(data){
-      modalCard.innerHTML = createMarkup(data)  
-     }
-     console.log(data);
-    addMarkup(data)
-    createBookObj(data)
+
+    function addMarkup(data) {
+      modalCard.innerHTML = createMarkup(data);
+    }
+    addMarkup(data);
+    createBookObj(data);
+    activateRemoveButton();
+
   } catch (error) {
     console.error(error.message);
   }
@@ -62,19 +63,34 @@ function createMarkup(data){
       `;
  }
 
- addBook.addEventListener("click", onAddBookClick)
 
- function onAddBookClick(evt){
-  if(evt.target.tagName === "BUTTON")
-  bookArr.push(bookObj)
-  localStorage.setItem("books", JSON.stringify(bookArr))
- }
+function activateRemoveButton() {
+  removeBook.style.display = 'block';
+}
+
+function onAddBookClick(evt) {
+  if (evt.target.tagName === 'BUTTON') {
+    if (bookObj) {
+      bookArr.push(bookObj);
+      localStorage.setItem('books', JSON.stringify(bookArr));
+      addBook.removeEventListener('click', onAddBookClick);
+      removeBook.addEventListener('click', onRemoveBookClick);
+    }
+  }
+}
 
 closeBtn.onclick = function() {
-  modalEl.classList.remove('active');
-	popUp.classList.remove('active');
-  document.body.classList.remove('modal-open')
+  // modalEl.classList.remove('active');
+	// popUp.classList.remove('active');
+  popUp.style.display = "none";
+  document.body.style.overflow = "";
 }
+
+addBook.addEventListener('click', onAddBookClick);
+closeBtn.onclick = function () {
+  popUp.style.display = 'none';
+};
+
 
 window.onclick = function(event) {
   if (event.target == popUp) {
