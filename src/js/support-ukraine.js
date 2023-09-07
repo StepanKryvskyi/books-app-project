@@ -1,22 +1,22 @@
 const list = document.querySelector('.list-support')
 let number = 1
-const imgUrl = new URL('../img/support-img/image-1.png', import.meta.url) ;
+const imgUrl = new URL('../img/support-img', import.meta.url) ;
 
 const arraySopportUA = [
   {
     title: 'Save the Children',
     url:'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-    img: `${imgUrl}`,
+    img: `${imgUrl}/image-1`,
   },
   {
     title: 'Project HOPE',
     url: 'https://www.projecthope.org/country/ukraine/',
-    img: './img/support-img/image-2.png?url',
+    img: `${imgUrl}/image-2`,
   },
   {
     title: 'International Medical Corps',
     url: 'https://internationalmedicalcorps.org/country/ukraine/',
-    img: '../img/support-img/image-3.png?url',
+    img: `${imgUrl}/image-3`,
   },
   {
     title: 'RAZOM',
