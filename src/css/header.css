@@ -29,10 +29,12 @@
 .mobile-menu {
   display: flex;
   flex-wrap: wrap;
-
+  margin-top: 183px;
+  margin-right: auto;
+  margin-left: auto;
   width: 120px;
   height: 70px;
-
+  list-style: none;
 }
 
 .home-link {
@@ -45,10 +47,9 @@
   min-width: 72px;
   min-height: 34px;
   padding: 8px 16px 8px 16px;
-  background-color: #EAC645;
+  background-color: #eac645;
   border-radius: 36px;
-  gap: 10px
-
+  gap: 10px;
 }
 .link-on-home-mobile {
   font-family: 'DM Sans';
@@ -57,17 +58,17 @@
   line-height: 18px;
   letter-spacing: -0.04em;
 
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
-.close-modal-btn{
+.close-modal-btn {
   background-color: transparent;
   border: transparent;
   padding: 0;
 }
 
 .cross-modal-icon {
-   fill: #111;
+  fill: #111;
 }
 
 .nav-link {
@@ -139,7 +140,7 @@ input:checked + .slider:before {
 .logo-icon {
   display: block;
 }
-.menu-toggle-btn{
+.menu-toggle-btn {
   margin-left: 10px;
   background-color: transparent;
   padding: 0;
@@ -155,9 +156,17 @@ input:checked + .slider:before {
   }
 }
 
-.menu-container{
-  position: absolute; 
-  top: 0;
-  left: 0;
+.menu-container {
+  position: absolute;
+  width: 375px;
+  height: 812px;
+  padding: 20px;
+  top: 64px;
+  left: 16px;
   background-color: #4f2ee8;
+}
+.mobil-menu-img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
