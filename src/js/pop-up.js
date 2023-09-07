@@ -68,15 +68,22 @@ function activateRemoveButton() {
   removeBook.style.display = 'block';
 }
 
-function onAddBookClick(evt) {
-  if (evt.target.tagName === 'BUTTON') {
-    if (bookObj) {
-      bookArr.push(bookObj);
-      localStorage.setItem('books', JSON.stringify(bookArr));
-      addBook.removeEventListener('click', onAddBookClick);
-      removeBook.addEventListener('click', onRemoveBookClick);
-    }
-  }
+
+closeBtn.onclick = function() {
+    modalEl.classList.remove('active');
+	  popUp.classList.remove('active');
+    document.body.classList.remove('modal-open')
+
+// function onAddBookClick(evt) {
+//   if (evt.target.tagName === 'BUTTON') {
+//     if (bookObj) {
+//       bookArr.push(bookObj);
+//       localStorage.setItem('books', JSON.stringify(bookArr));
+//       addBook.removeEventListener('click', onAddBookClick);
+//       removeBook.addEventListener('click', onRemoveBookClick);
+//     }
+//   }
+
 }
 
 

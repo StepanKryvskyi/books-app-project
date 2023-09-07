@@ -17,6 +17,7 @@ const removeBook = document.querySelector('.remove-button')
 const bookArr = []
 
 
+
 export {popUp,closeBtn, modalCard, addBook, removeBook, bookArr, modalEl}
 export { galleryList, catList, catTitle, booksBox, loader, bookCard, btnSeeMore, btnToTop};
 

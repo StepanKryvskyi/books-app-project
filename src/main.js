@@ -1,11 +1,11 @@
 import { pagination } from './js/pagination';
 import { createCategoryGallery, createBestsellersGallery} from './js/books-gallery-cat';
+import {  galleryList, catList, catTitle, booksBox, loader, bookCard, btnSeeMore, modalEl} from './js/refs';
 import { onBtnThemeClick } from './js/dark-mode';
 import { addCategoryTitle } from './js/gallery-markup';
 import { createCategory } from './js/query-and-markup';
 import { createBookCard } from './js/pop-up';
 import {scrollTop} from './js/scroll-to-top';
-import { galleryList, catList, loader} from './js/refs';
 import { createShoppingCard } from './js/shopping-list';
 import { load } from './js/support-ukraine';
 
@@ -63,9 +63,11 @@ galleryList.addEventListener("click", onBookClick);
  function onBookClick(evt){
   evt.preventDefault()
   const bookId = evt.target.closest('.book-card').getAttribute('id');
-  modalEl.classList.add('active');
-	popUp.classList.add('active');
-  document.body.classList.add('modal-open')
+
+    modalEl.classList.add('active');
+	  popUp.classList.add('active');
+    document.body.classList.add('modal-open')
+
     createBookCard(bookId)
 }
 
