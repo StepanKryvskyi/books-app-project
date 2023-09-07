@@ -13,7 +13,7 @@
 }
 .fact-team {
     font-style: normal;
-    font-size: 18px;
+    font-size: 12px;
     line-height: 1.2;
     letter-spacing: 0.02em;
     color: var(--color-naviblue);
@@ -31,7 +31,7 @@
 .list-team {
   display: flex;
   flex-wrap: wrap;
-  gap: 9px;
+  gap: 8px;
 }
 .item {
   background-color: var(--color-white);
@@ -41,7 +41,7 @@
   margin-bottom: 8px;
 }
 .card {
-  width: 266px;
+  width: 145px;
   background-color: var(--color-white);
   box-sizing: border-box;
   border-radius: 8px;
