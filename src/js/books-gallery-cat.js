@@ -1,6 +1,6 @@
 import { makeRequestByCategory, makeRequestAllBooks } from './API-by-categories';
-import { createBookMarkup, createBestsellersMarkup } from './gallery-markup';
-import { galleryList, loader} from './refs';
+import { createBookMarkup, createBestsellersMarkup, addCategoryTitle } from './gallery-markup';
+import { galleryList, loader, btnToTop} from './refs';
 
 // Creating a gallery of bestsellers book all categories
 async function createBestsellersGallery() {
@@ -9,6 +9,7 @@ async function createBestsellersGallery() {
   try {
     const { data } = await makeRequestAllBooks();
     addMarkup(createBestsellersMarkup(data));
+// showMoreBooks()
     loader.classList.toggle('visually-hidden');
   } catch (error) {
     console.error(error.message);
@@ -37,6 +38,5 @@ async function createCategoryGallery(category) {
 function addMarkup(markup) {
   galleryList.innerHTML = markup;
 }
-
 
 export { createCategoryGallery, createBestsellersGallery};

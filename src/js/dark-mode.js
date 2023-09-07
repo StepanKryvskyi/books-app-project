@@ -1,8 +1,10 @@
+import {galleryList, btnSeeMore} from './refs'
 // Button Toggle
 
 const themeToggleBtn = document.querySelector('#themeToggle');
 
 // Header Item
+
 const darkSeeMoreButton = document.querySelector('.btn-see-more');
 const headerEL = document.querySelector('#header');
 
@@ -16,7 +18,9 @@ const logoIcon = document.querySelector('.logo');
 
 // Book List Item
 
-const bookEl = document.querySelector('.book-list');
+const bookEl = document.querySelector('.list-link');
+
+
 
 themeToggleBtn.addEventListener('change', onBtnThemeClick);
 
@@ -26,6 +30,13 @@ export function onBtnThemeClick() {
   if (themeToggleBtn.checked) {
     document.body.classList.add('darkmode');
     headerEL.classList.add('header-dark');
+    bookEl.classList.add('book-dark');
+    
+  } else {
+    document.body.classList.remove('darkmode');
+    headerEL.classList.remove('header-dark');
+    logoIcon.classList.remove('logo-dark');
+    shoperIcon.classList.remove('shoper-dark');
     shoperIcon.classList.add('shoper-dark');
     shoperIcon.classList.remove('dark-shopper-icon');
     logoIcon.classList.add('dark-icon');
@@ -51,3 +62,4 @@ export function onBtnThemeClick() {
   
   }
 }
+
