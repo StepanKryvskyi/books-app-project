@@ -2,6 +2,7 @@
 
 .darkmode {
   background-color: #202024;
+
   color: #fff;
 }
 
@@ -12,7 +13,7 @@
 }
 
 .shoper-dark {
-  fill: #fff;
+  display: block;
 }
 
 .nav-link:hover,
@@ -22,4 +23,8 @@
 
 .book-dark {
   color: #eac645;
+}
+
+.dark-icon {
+  display: none;
 }
