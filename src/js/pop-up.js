@@ -79,16 +79,29 @@ function onAddBookClick(evt) {
   }
 }
 
-closeBtn.onclick = function() {
-  // modalEl.classList.remove('active');
-	// popUp.classList.remove('active');
-  popUp.style.display = "none";
-  document.body.style.overflow = "";
-}
+
+
+// function onRemoveBookClick(evt) {
+//   if (evt.target.tagName === 'BUTTON') {
+//     const bookIdToRemove = bookObj._id;
+//     const indexToRemove = bookArr.findIndex(
+//       book => book._id === bookIdToRemove
+//     );
+//     if (indexToRemove !== -1) {
+//       bookArr.splice(indexToRemove, 1);
+//       localStorage.setItem('books', JSON.stringify(bookArr));
+//       removeBook.removeEventListener('click', onRemoveBookClick);
+//       addBook.addEventListener('click', onAddBookClick);
+//       removeBook.style.display = 'none';
+//     }
+//   }
+// }
 
 addBook.addEventListener('click', onAddBookClick);
 closeBtn.onclick = function () {
-  popUp.style.display = 'none';
+  modalEl.classList.remove('active');
+	  popUp.classList.remove('active');
+    document.body.classList.remove('modal-open')
 };
 
 

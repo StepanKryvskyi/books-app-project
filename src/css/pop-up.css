@@ -3,10 +3,13 @@ body{
     font-size: 21px;
     line-height: 1.8;
 }
+
 .modal-open{
     overflow: hidden;
 }
+
 .modal {
+
     position: fixed;
     top: 0;
     left: 0;
@@ -52,7 +55,7 @@ body{
       height: 465px;
       padding: 40px;
     }
-    }
+    } 
 
 .close{
 position: absolute;
