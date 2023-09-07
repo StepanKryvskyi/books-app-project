@@ -1,5 +1,7 @@
 import {requestBookData} from './API-by-book-Id-info'
-import {popUp,closeBtn, modalCard, addBook, removeBook, bookArr} from './refs'
+import { popUp, closeBtn, modalCard, addBook, removeBook, modalEl } from './refs'
+
+const bookArr = [];
 
 async function createBookCard(bookId) {
   try {
@@ -9,16 +11,19 @@ async function createBookCard(bookId) {
       modalCard.innerHTML = createMarkup(data);
     }
     addMarkup(data);
-    createBookObj(data);
-    activateRemoveButton();
+    // console.log(createBookObj(data));
+    workWithLocalStorage(data);
+
+    // activateRemoveButton();
 
   } catch (error) {
     console.error(error.message);
   }
   
 }
-function createBookObj(_id, book_image, title, author, buy_links, description){
-  const bookObj = {_id, book_image, title, author, buy_links, description}
+function createBookObj({ _id, book_image, title, author, buy_links, description }){
+  const bookObj = { _id, book_image, title, author, buy_links, description }
+  
 }
 function createMarkup(data){
   const {_id, book_image, title, author, buy_links, description,book_image_height, book_image_width} = data;
@@ -64,62 +69,65 @@ function createMarkup(data){
  }
 
 
-function activateRemoveButton() {
-  removeBook.style.display = 'block';
-}
+function workWithLocalStorage(data) {
+  const bookObj = createBookObj(data);
 
-function onAddBookClick(evt) {
-  if (evt.target.tagName === 'BUTTON') {
-    if (bookObj) {
-      bookArr.push(bookObj);
-      localStorage.setItem('books', JSON.stringify(bookArr));
-      addBook.removeEventListener('click', onAddBookClick);
-      removeBook.addEventListener('click', onRemoveBookClick);
+  addBook.addEventListener('click', onAddBookClick)
+
+  function onAddBookClick(evt, bookObj) {
+    console.log(bookObj)
+    if (evt.target.tagName === 'BUTTON') {
+      if (bookObj) {
+        bookArr.push(bookObj);
+        localStorage.setItem('books', JSON.stringify(bookArr));
+        addBook.classList.add('display');
+        removeBook.classList.remove('display');
+        removeBook.addEventListener('click', onRemoveBookClick);
+      }
+    }
+    
+    function onRemoveBookClick(evt, bookObj) {
+      if (evt.target.tagName === 'BUTTON') {
+        const bookIdToRemove = bookObj._id;
+        const indexToRemove = bookArr.findIndex(
+          book => book._id === bookIdToRemove
+        );
+        if (indexToRemove !== -1) {
+          bookArr.splice(indexToRemove, 1);
+          localStorage.setItem('books', JSON.stringify(bookArr));
+          removeBook.classList.add('display');
+          addBook.classList.remove('display');
+        }
+      }
     }
   }
 }
 
-
-closeBtn.onclick = function() {
-  // modalEl.classList.remove('active');
-	// popUp.classList.remove('active');
-  popUp.style.display = "none";
-  document.body.style.overflow = "";
-}
-
-// function onRemoveBookClick(evt) {
-//   if (evt.target.tagName === 'BUTTON') {
-//     const bookIdToRemove = bookObj._id;
-//     const indexToRemove = bookArr.findIndex(
-//       book => book._id === bookIdToRemove
-//     );
-//     if (indexToRemove !== -1) {
-//       bookArr.splice(indexToRemove, 1);
-//       localStorage.setItem('books', JSON.stringify(bookArr));
-//       removeBook.removeEventListener('click', onRemoveBookClick);
-//       addBook.addEventListener('click', onAddBookClick);
-//       removeBook.style.display = 'none';
-//     }
-//   }
-// }
-
-addBook.addEventListener('click', onAddBookClick);
 closeBtn.onclick = function () {
-  popUp.style.display = 'none';
+  modalEl.classList.remove('active');
+	  popUp.classList.remove('active');
+    document.body.classList.remove('modal-open')
 };
 
+closeBtn.onclick = function() {
+    modalEl.classList.remove('active');
+	  popUp.classList.remove('active');
+    document.body.classList.remove('modal-open')
+}
 
 window.onclick = function(event) {
   if (event.target == popUp) {
-    popUp.style.display = "none";
-    document.body.style.overflow = "";
+    modalEl.classList.remove('active');
+	  popUp.classList.remove('active');
+    document.body.classList.remove('modal-open')
   }
 }
 
 window.addEventListener('keydown', function (event) {
   if (event.key === 'Escape') {
-    popUp.style.display = 'none';
-    document.body.style.overflow = "";
+    modalEl.classList.remove('active');
+	  popUp.classList.remove('active');
+    document.body.classList.remove('modal-open')
   }
 })
 

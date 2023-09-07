@@ -48,6 +48,6 @@ export function onBtnThemeClick() {
     shoperIcon.classList.remove('shoper-dark');
     shoperIcon.classList.add('dark-shopper-icon');
     bookEl.classList.remove('book-dark');
-  
+
   }
 }

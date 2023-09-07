@@ -38,10 +38,6 @@
   }
 }
 
-.books {
-  overflow-x: hidden;
-}
-
 .best-gallery {
   display: flex;
   flex-direction: column;
@@ -60,7 +56,7 @@
 
 @keyframes slideInLeft {
   0% {
-    transform: translateX(-50%);
+    transform: translateX(100%);
   }
 
   100% {
