@@ -26,6 +26,50 @@
   }
 }
 
+.mobile-menu {
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 120px;
+  height: 70px;
+
+}
+
+.home-link {
+  font-family: 'DM Sans';
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+
+  min-width: 72px;
+  min-height: 34px;
+  padding: 8px 16px 8px 16px;
+  background-color: #EAC645;
+  border-radius: 36px;
+  gap: 10px
+
+}
+.link-on-home-mobile {
+  font-family: 'DM Sans';
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+
+  color: #FFFFFF;
+}
+
+.close-modal-btn{
+  background-color: transparent;
+  border: transparent;
+  padding: 0;
+}
+
+.cross-modal-icon {
+   fill: #111;
+}
+
 .nav-link {
   display: flex;
   justify-content: center;
