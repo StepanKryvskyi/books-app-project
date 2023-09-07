@@ -13,6 +13,11 @@
 
 .shoper-dark {
   fill: #fff;
+  
+}
+
+.logo-dark {
+  stroke: #fff;
 }
 
 .nav-link:hover,
@@ -20,6 +25,12 @@
   color: #111111;
 }
 
-.book-dark {
+.book-dark:hover,
+.book-dark:focus {
+  text-transform: uppercase;
   color: #eac645;
+}
+
+.btn-more-dark {
+  color: #fff;
 }
