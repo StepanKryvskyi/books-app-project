@@ -1,14 +1,14 @@
 const list = document.querySelector('.list-support')
 let number = 1
 const imgUrl1 = new URL('../img/support-img/image-1', import.meta.url);
-const imgUrl2 = new URL('../img/support-img/image-1', import.meta.url);
-const imgUrl3 = new URL('../img/support-img/image-1', import.meta.url);
-const imgUrl4 = new URL('../img/support-img/image-1', import.meta.url);
-const imgUrl5 = new URL('../img/support-img/image-1', import.meta.url);
-const imgUrl6 = new URL('../img/support-img/image-1', import.meta.url);
-const imgUrl7 = new URL('../img/support-img/image-1', import.meta.url);
-const imgUrl8 = new URL('../img/support-img/image-1', import.meta.url);
-const imgUrl9 = new URL('../img/support-img/image-1', import.meta.url);
+const imgUrl2 = new URL('../img/support-img/image-2', import.meta.url);
+const imgUrl3 = new URL('../img/support-img/image-3', import.meta.url);
+const imgUrl4 = new URL('../img/support-img/image-4', import.meta.url);
+const imgUrl5 = new URL('../img/support-img/image-5', import.meta.url);
+const imgUrl6 = new URL('../img/support-img/image-6', import.meta.url);
+const imgUrl7 = new URL('../img/support-img/image-7', import.meta.url);
+const imgUrl8 = new URL('../img/support-img/image-8', import.meta.url);
+const imgUrl9 = new URL('../img/support-img/image-9', import.meta.url);
 
 const arraySopportUA = [
   {
