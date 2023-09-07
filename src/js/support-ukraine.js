@@ -6,7 +6,7 @@ const arraySopportUA = [
   {
     title: 'Save the Children',
     url:'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-    img: 'imgUrl',
+    img: '`${imgUrl}`',
   },
   {
     title: 'Project HOPE',
