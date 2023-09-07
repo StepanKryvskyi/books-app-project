@@ -1,16 +1,21 @@
-
-// import './js/pagination';
+import { pagination } from './js/pagination';
 import { createCategoryGallery, createBestsellersGallery} from './js/books-gallery-cat';
-import { galleryList, catList, loader, bookCard} from './js/refs';
 import { onBtnThemeClick } from './js/dark-mode';
 import { addCategoryTitle } from './js/gallery-markup';
 import { createCategory } from './js/query-and-markup';
 import { createMarkup, createBookCard } from './js/pop-up';
+import {scrollTop} from './js/scroll-to-top';
 
-// import { createShoppingCard } from './js/shopping-list';
+
+import {  galleryList, catList, catTitle, booksBox, loader, bookCard, btnSeeMore } from './js/refs';
+
+import { createShoppingCard } from './js/shopping-list';
+
+scrollTop();
 
 createCategoryGallery();
-// createShoppingCard();
+createShoppingCard();
+
 
 import { load } from './js/support-ukraine';
 
@@ -22,44 +27,72 @@ createBestsellersGallery();
 
 // Creating books gallery by category
 
-load()
+load();
 
 catList.addEventListener('click', onClickShowCatBooks);
 
-onBtnThemeClick();
 
 function onClickShowCatBooks(evt) {    
   galleryList.innerHTML = "";
   loader.classList.toggle('visually-hidden');
   if (evt.target.textContent === "All categories") {
-    addCategoryTitle('Best Sellers Books # #');
+        addCategoryTitle('Best Sellers Books # #');
     createBestsellersGallery();
     loader.classList.toggle('visually-hidden');
   } else {
-    const cat = evt.target.textContent; 
+    
+    const cat = evt.target.textContent;
     addCategoryTitle(cat);
     createCategoryGallery(cat);
+
     loader.classList.toggle('visually-hidden');
-  }   
+}
+    
 }
 
-btnSeeMore.addEventListener('click', onClickSeeMore);
+// galleryList.addEventListener("click", onBookClick)
 
-function onClickSeeMore(evt) {
-  galleryList.innerHTML = "";
-  loader.classList.toggle('visually-hidden');
-  const catName = evt.target.dataset.cat;  
-  addCategoryTitle(catName);
-  createCategoryGallery(catName);
-}
+//  function onBookClick(evt){
+//   evt.preventDefault();
+//   const bookId = evt.target.closest('.book-card').getAttribute('id');
+//   popUp.style.display = "block";
+//   modalEl.classList.add('active');
+// 	popUp.classList.add('active');
+//   document.body.style.overflow = "hidden";
+//     createBookCard(bookId)
+// }
+// onBookClick()
 
-galleryList.addEventListener("click", onBookClick)
+galleryList.addEventListener("click", onBookClick);
 
- function onBookClick(evt){
-  const bookId = evt.target.closest('.book-card').getAttribute('id');
-  popUp.style.display = "block";
-  
-    createBookCard(bookId)
+function onBookClick(evt) {
+  if (evt.target.closest('.book-card')) {
+    const bookId = evt.target.closest('.book-card').getAttribute('id');
+    popUp.style.display = "block";
+    document.body.style.overflow = "hidden";
+    createBookCard(bookId);
+  }
 }
 
 onBookClick()
+
+
+
+document.addEventListener('click', function (event) {
+  if (event.target.classList.contains('btn-see-more')) {
+    onSeeMoreClick(event);
+  }
+});
+
+function onSeeMoreClick(event) {
+  const category = event.target.getAttribute('data-cat');
+
+  if (category === 'All categories') {
+    addCategoryTitle('Best Sellers Books # #');
+    createBestsellersGallery();
+  } else {
+    addCategoryTitle(category);
+    createCategoryGallery(category);
+  }
+  loader.classList.toggle('visually-hidden');
+}
