@@ -4,7 +4,7 @@ body{
     line-height: 1.8;
 }
 
-/* .modal{
+ .modal{
     display: none;
     position: fixed;
     z-index: 1;
@@ -28,9 +28,9 @@ body{
     top: 0;
     left: 50%;
     right: 50%;
-	/* transform: translate(-50%, -500%);  */
-    /* bottom: -130px; */
-    /* border: 2px solid #111111;
+	 transform: translate(-50%, -500%); 
+     bottom: -130px; 
+     border: 2px solid #111111;
     border-radius: 18px;
     
 }
@@ -46,9 +46,9 @@ body{
         border-radius: 18px;
         
     } 
-} */ */
+} 
 /* ============================================================================================ */
-.modal {
+/* .modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -94,7 +94,7 @@ body{
       height: 465px;
       padding: 40px;
     }
-    }
+    } */
 
 .close{
 position: absolute;

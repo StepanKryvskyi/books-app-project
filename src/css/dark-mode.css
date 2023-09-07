@@ -2,6 +2,7 @@
 
 .darkmode {
   background-color: #202024;
+
   color: #fff;
 }
 
@@ -11,13 +12,10 @@
   background-color: #111111;
 }
 
-.shoper-dark {
-  fill: #fff;
-  
-}
+
 
 .logo-dark {
-  stroke: #fff;
+  display: block;
 }
 
 .nav-link:hover,
@@ -31,6 +29,12 @@
   color: #eac645;
 }
 
+
 .btn-more-dark {
   color: #fff;
 }
+
+.dark-icon {
+  display: none;
+}
+
