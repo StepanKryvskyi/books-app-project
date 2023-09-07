@@ -1,29 +1,19 @@
 import {requestBookData} from './API-by-book-Id-info'
-import { popUp, closeBtn, modalCard, addBook, removeBook, modalEl } from './refs'
-
-const bookArr = [];
+import {popUp,closeBtn, modalCard, addBook, removeBook, modalEl} from './refs'
 
 async function createBookCard(bookId) {
   try {
     const data = await requestBookData(bookId);
-
-    function addMarkup(data) {
-      modalCard.innerHTML = createMarkup(data);
-    }
+    function addMarkup (data){
+    modalCard.innerHTML = createMarkup(data);
+   }
     addMarkup(data);
-    // console.log(createBookObj(data));
-    workWithLocalStorage(data);
-
-    // activateRemoveButton();
+    createBookObj(data);
+    activateRemoveButton();
 
   } catch (error) {
     console.error(error.message);
   }
-  
-}
-function createBookObj({ _id, book_image, title, author, buy_links, description }){
-  const bookObj = { _id, book_image, title, author, buy_links, description }
-  
 }
 function createMarkup(data){
   const {_id, book_image, title, author, buy_links, description,book_image_height, book_image_width} = data;
@@ -68,50 +58,50 @@ function createMarkup(data){
       `;
  }
 
+const bookArr = [];
+let bookObj = {};
 
-function workWithLocalStorage(data) {
-  const bookObj = createBookObj(data);
+function createBookObj({ _id, book_image, title, author, buy_links, description }){
+  bookObj = {_id, book_image, title, author, buy_links, description}
+}
 
-  addBook.addEventListener('click', onAddBookClick)
-
-  function onAddBookClick(evt, bookObj) {
-    console.log(bookObj)
-    if (evt.target.tagName === 'BUTTON') {
-      if (bookObj) {
-        bookArr.push(bookObj);
-        localStorage.setItem('books', JSON.stringify(bookArr));
-        addBook.classList.add('display');
-        removeBook.classList.remove('display');
-        removeBook.addEventListener('click', onRemoveBookClick);
-      }
-    }
-    
-    function onRemoveBookClick(evt, bookObj) {
-      if (evt.target.tagName === 'BUTTON') {
-        const bookIdToRemove = bookObj._id;
-        const indexToRemove = bookArr.findIndex(
-          book => book._id === bookIdToRemove
-        );
-        if (indexToRemove !== -1) {
-          bookArr.splice(indexToRemove, 1);
-          localStorage.setItem('books', JSON.stringify(bookArr));
-          removeBook.classList.add('display');
-          addBook.classList.remove('display');
-        }
-      }
+function onAddBookClick(evt) {
+  if (evt.target.tagName === 'BUTTON') {
+    if (bookObj) {
+      bookArr.push(bookObj);
+      localStorage.setItem('books', JSON.stringify(bookArr));
+      addBook.classList.add('display')
+      removeBook.classList.remove('display')
+      removeBook.addEventListener('click', onRemoveBookClick);
     }
   }
 }
 
+function onRemoveBookClick(evt) {
+  if (evt.target.tagName === 'BUTTON') {
+    const bookIdToRemove = bookObj._id;
+    const indexToRemove = bookArr.findIndex(
+      book => book._id === bookIdToRemove
+    );
+    if (indexToRemove !== -1) {
+      bookArr.splice(indexToRemove, 1);
+      localStorage.setItem('books', JSON.stringify(bookArr));
+      removeBook.classList.add('display');
+      addBook.classList.remove('display');
+    }
+  }
+}
+
+addBook.addEventListener('click', onAddBookClick);
 closeBtn.onclick = function () {
   modalEl.classList.remove('active');
-	  popUp.classList.remove('active');
+    popUp.classList.remove('active');
     document.body.classList.remove('modal-open')
 };
 
 closeBtn.onclick = function() {
     modalEl.classList.remove('active');
-	  popUp.classList.remove('active');
+    popUp.classList.remove('active');
     document.body.classList.remove('modal-open')
 }
 
@@ -130,7 +120,5 @@ window.addEventListener('keydown', function (event) {
     document.body.classList.remove('modal-open')
   }
 })
-
-
 
 export { createBookCard, createMarkup}
