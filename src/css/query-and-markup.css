@@ -39,6 +39,19 @@
   }
 }
 
+.scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #E0E0E0; 
+  border-radius: 12px;
+}
+
 .overlay-bg {
   position: absolute;
   bottom: 0;
