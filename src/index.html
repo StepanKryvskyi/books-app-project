@@ -34,8 +34,9 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&display=swap"
       rel="stylesheet"
     />
-    <title>Bookshelf</title>
+
     <link rel="stylesheet" href="./css/styles.css" />
+    <title>Bookshelf</title>
   </head>
   <body>
     <load src="partials/header.html" />
@@ -43,22 +44,65 @@
       <section>
         <div class="container">
           <div class="lists">
-              <ul class="categories-list scroll-container">
-                <li class="book-list"><a href="#" class="list-link">All categories</a></li>
-              </ul>            
-            <div class="container-support">
-              <p class="primart-text-support">Support Ukraine</p><img src="./img/favicon/Vector.png" alt="emblem" class="emblem">
+
+            <ul class="categories-list scroll-container">
+              <li class="book-list">
+                <a href="#" class="list-link">All categories</a>
+              </li>
+            </ul>
+       <div class="container-support">
+              <p class="primart-text-support">Support Ukraine</p>
+              <img src="./img/favicon/Vector.png" alt="emblem" class="emblem" />
               <ul class="list-support" id="list-support"></ul>
             </div>
           </div>
           <div class="books">
-            <h1 class="category-title">Best Sellers<span class="cat-span">Books</span></h1>
+
+            <h1 class="category-title">
+              Best Sellers<span class="cat-span">Books</span>
+            </h1>
+
+
             <div class="gallery"></div>
             <p class="loader visually-hidden"></p>
           </div>
+          <button type="button" class="to-top">▲</button>
+        </div>
       </section>
       <load src="partials/pop-up.html" />
+
+      <load src="partials/pagination.html" />
     </main>
+    <load src="partials/footer.html" />
+
+    <div class="menu-container js-menu-container" id="mobile-menu">
+      <button class="modal-btn js-close-menu" type="button" data-modal-close>
+        <svg class="modal-icon" width="8" height="8">
+          <use href="./img/svg/icons.svg#icon-close-x "></use>
+        </svg>
+      </button>
+
+      <ul class="mobile-menu list">
+        <li>
+          <li class="nav-item">
+            <a href="./index.html" class="nav-link home-link">HOME</a>
+          </li>
+        <li>
+          <a href="./shopping-list.html" class="nav-link"
+            >SHOPPING LIST<svg
+              class="unchecked shoper-dark"
+              width="20"
+              height="20"
+            >
+              <use href="./img/svg/icons.svg#shopper-icon"></use></svg
+            ><svg class="shoper-icon dark-shopper-icon" width="20" height="20">
+              <use href="./img/svg/icons.svg#icon-dark-shopper"></use></svg
+          ></a>
+        </li>
+        <img class="mobil-menu-img" src="./img/header/books-group.png" alt="Books">
+      </ul>
+    </div>
+
     <script type="module" src="/main.js"></script>
   </body>
 </html>
