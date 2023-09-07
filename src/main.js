@@ -45,12 +45,11 @@ function onClickShowCatBooks(evt) {
 galleryList.addEventListener("click", onBookClick)
 
  function onBookClick(evt){
-  evt.preventDefault();
+  evt.preventDefault()
   const bookId = evt.target.closest('.book-card').getAttribute('id');
-  // popUp.style.display = "block";
   modalEl.classList.add('active');
 	popUp.classList.add('active');
-  document.body.style.overflow = "hidden";
+  document.body.classList.add('modal-open')
     createBookCard(bookId)
 }
 onBookClick()
