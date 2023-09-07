@@ -57,13 +57,14 @@ function onClickShowCatBooks(evt) {
   }
 }
 
-
-galleryList.addEventListener("click", onBookClick);
+document.addEventListener('click', function (event) {
+  if (event.target.classList.contains('book-cover')) {
+    onBookClick(event);
+  }
+});
 
  function onBookClick(evt){
-  evt.preventDefault()
   const bookId = evt.target.closest('.book-card').getAttribute('id');
-
     modalEl.classList.add('active');
 	  popUp.classList.add('active');
     document.body.classList.add('modal-open')
