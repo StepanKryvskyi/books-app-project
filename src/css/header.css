@@ -112,5 +112,8 @@ input:checked + .slider:before {
 }
 
 .menu-container{
-  display: none;
+  position: absolute; 
+  top: 0;
+  left: 0;
+  background-color: #4f2ee8;
 }

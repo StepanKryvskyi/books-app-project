@@ -8,7 +8,7 @@ import { createBookCard } from './js/pop-up';
 import {scrollTop} from './js/scroll-to-top';
 import { createShoppingCard } from './js/shopping-list';
 import { load } from './js/support-ukraine';
-
+import './js/mobil-menu';
 // Add scroll btn to top of the page 
 scrollTop();
 
