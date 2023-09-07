@@ -37,16 +37,16 @@
 
     
     <title>Bookshelf</title>
-    <script type="module" crossorigin src="/books-app-project/assets/main-fd4fa9a3.js"></script>
-    <link rel="stylesheet" href="/books-app-project/assets/main-31ce416a.css">
+    <script type="module" crossorigin src="/books-app-project/assets/main-d9bf3df0.js"></script>
+    <link rel="stylesheet" href="/books-app-project/assets/main-a4a1dbda.css">
   </head>
   <body>
     <header class="header" id="header">
   <a href="./index.html" class="logo-link"
     ><svg class="logo logo-icon" width="109" height="28">
-      <use href="/books-app-project/assets/icons-341c5943.svg#logo-icon"></use></svg
+      <use href="/books-app-project/assets/icons-6585ddaa.svg#logo-icon"></use></svg
     ><svg class="dark-logo dark-icon" width="109" height="28">
-      <use href="/books-app-project/assets/icons-341c5943.svg#icon-dark-logo"></use></svg
+      <use href="/books-app-project/assets/icons-6585ddaa.svg#icon-dark-logo"></use></svg
   ></a>
 
   <nav class="nav">
@@ -62,9 +62,9 @@
             width="20"
             height="20"
           >
-            <use href="/books-app-project/assets/icons-341c5943.svg#shopper-icon"></use></svg
+            <use href="/books-app-project/assets/icons-6585ddaa.svg#shopper-icon"></use></svg
           ><svg class="shoper-icon dark-shopper-icon" width="20" height="20">
-            <use href="/books-app-project/assets/icons-341c5943.svg#icon-dark-shopper"></use></svg
+            <use href="/books-app-project/assets/icons-6585ddaa.svg#icon-dark-shopper"></use></svg
         ></a>
       </li>
     </ul>
@@ -75,13 +75,17 @@
 
     <span class="slider round"></span>
   </label>
+  <button class="menu-toggle-btn" type="button">
+    <svg class="menu-toggle-icon" width="28" height="28">
+      <use href="/books-app-project/assets/icons-6585ddaa.svg#icon-align-left"></use>
+    </svg>
+  </button>
 </header>
 
     <main>
       <section>
         <div class="container">
           <div class="lists">
-
             <ul class="categories-list scroll-container">
               <li class="book-list">
                 <a href="#" class="list-link">All categories</a>
@@ -109,7 +113,7 @@
         <div class="modal-content">
             <button class="close" type="button">
                 <svg class="close-icon" width="20" height="20">
-                  <use href="/books-app-project/assets/icons-341c5943.svg#icon-close-x"></use>
+                  <use href="/books-app-project/assets/icons-6585ddaa.svg#icon-close-x"></use>
                 </svg>
             </button>
             <div class="modal-body">
@@ -126,15 +130,12 @@
         </div>        
     </div>
 
-      
-
       <div class="pagination-wrapper">
   <div id="pagination" class="tui-pagination"></div>
 </div>
 
-
     </main>
-  <footer class="footer">
+    <footer class="footer">
     <h2 class="">Our Team likes</h2>
   <ul class="list-team">
     <li class="item">
@@ -248,6 +249,35 @@
    </ul>
 
 </footer>
+
+    <div class="menu-container js-menu-container" id="mobile-menu">
+      <button class="modal-btn js-close-menu" type="button" data-modal-close>
+        <svg class="modal-icon" width="8" height="8">
+          <use href="/books-app-project/assets/icons-6585ddaa.svg#icon-close-x"></use>
+        </svg>
+      </button>
+
+      <ul class="mobile-menu list">
+        <li>
+          <li class="nav-item">
+            <a href="./index.html" class="nav-link home-link">HOME</a>
+          </li>
+        <li>
+          <a href="./shopping-list.html" class="nav-link"
+            >SHOPPING LIST<svg
+              class="unchecked shoper-dark"
+              width="20"
+              height="20"
+            >
+              <use href="/books-app-project/assets/icons-6585ddaa.svg#shopper-icon"></use></svg
+            ><svg class="shoper-icon dark-shopper-icon" width="20" height="20">
+              <use href="/books-app-project/assets/icons-6585ddaa.svg#icon-dark-shopper"></use></svg
+          ></a>
+        </li>
+        <img class="mobil-menu-img" src="/books-app-project/assets/books-group-3c441394.png" alt="Books">
+      </ul>
+    </div>
+
     
   </body>
 </html>
