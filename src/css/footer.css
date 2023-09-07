@@ -13,7 +13,6 @@
 }
 .fact-team {
     font-style: normal;
-
     font-size: 18px;
     line-height: 1.2;
     letter-spacing: 0.02em;
@@ -45,6 +44,7 @@
   width: 266px;
   background-color: var(--color-white);
   box-sizing: border-box;
+  border-radius: 8px;
 }
 
 .overlay-bg-item {
@@ -68,6 +68,7 @@
 }
 
 .overlay-text-item {
+  font-weight: bolder;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.3;
