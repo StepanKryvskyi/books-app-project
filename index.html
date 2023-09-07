@@ -34,16 +34,19 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&display=swap"
       rel="stylesheet"
     />
-    <title>Bookshelf</title>
+
     
-    <script type="module" crossorigin src="/books-app-project/assets/main-0994be20.js"></script>
-    <link rel="stylesheet" href="/books-app-project/assets/main-44bdd85a.css">
+    <title>Bookshelf</title>
+    <script type="module" crossorigin src="/books-app-project/assets/main-570b9da6.js"></script>
+    <link rel="stylesheet" href="/books-app-project/assets/main-8c483edd.css">
   </head>
   <body>
     <header class="header" id="header">
   <a href="./index.html" class="logo-link"
-    ><svg class="" width="109" height="28">
-      <use href="/books-app-project/assets/icons-0bd4d2b3.svg#logo-icon"></use></svg
+    ><svg class="logo logo-icon" width="109" height="28">
+      <use href="/books-app-project/assets/icons-341c5943.svg#logo-icon"></use></svg
+    ><svg class="dark-logo dark-icon" width="109" height="28">
+      <use href="/books-app-project/assets/icons-341c5943.svg#icon-dark-logo"></use></svg
   ></a>
 
   <nav class="nav">
@@ -51,16 +54,25 @@
       <li class="nav-item">
         <a href="./index.html" class="nav-link home-link">HOME</a>
       </li>
+
       <li class="nav-item">
         <a href="./shopping-list.html" class="nav-link"
-          >SHOPPING LIST<svg class="shoper-icon" width="20" height="20">
-            <use href="/books-app-project/assets/icons-0bd4d2b3.svg#shopper-icon"></use></svg
+          >SHOPPING LIST<svg
+            class="unchecked shoper-dark"
+            width="20"
+            height="20"
+          >
+            <use href="/books-app-project/assets/icons-341c5943.svg#shopper-icon"></use></svg
+          ><svg class="shoper-icon dark-shopper-icon" width="20" height="20">
+            <use href="/books-app-project/assets/icons-341c5943.svg#icon-dark-shopper"></use></svg
         ></a>
       </li>
     </ul>
   </nav>
+
   <label class="switch">
     <input type="checkbox" id="themeToggle" />
+
     <span class="slider round"></span>
   </label>
 </header>
@@ -69,30 +81,33 @@
       <section>
         <div class="container">
           <div class="lists">
-              <ul class="categories-list scroll-container">
-
-                <li class="book-list"><a href="#" class="list-link">All categories</a></li>
-              </ul>            
+            <ul class="categories-list scroll-container">
+              <li class="book-list">
+                <a href="#" class="list-link">All categories</a>
+              </li>
+            </ul>
             <div class="container-support">
-              <p class="primart-text-support">Support Ukraine</p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAgCAYAAAASYli2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHlSURBVHgBrVbRccIwDFW4/jcb1J2AbFB3AugEdIN2A2CC0gmgE0AnCEwQOkHYIGzgykEiiuIQ4PLudDa29Cw5Tz4AroBz7h3tE/oCkuVoxbXOk479xFVIOnwtkOMSLW5zEoT2ApnncCCcsxCpytC2kK3ZgQkLGr8CzuZSybg2lRxMmJI1svBZC0LTcpiPXWnC82Ygi1M5zfUVH8TzAW9GUXTAYYtmA3fp947QxAjtl2JLDJTDD40vgeCjys7iEFMS0Ea4p/EZupGomCAhZ2GgG0bFNAnFXTxCN54oppbhQ8DxAFU5tWz8x0ICzigmX2jNkLAHUbLSZaLmh4uEJJfShHQkiVV+RotdZ5hS0J4CPPg18qWynFguBm1d0y0pPReqn4k9fhg2odbE+YLWPGkmW8+F+lUcYl31jC0DB54he3ksTjOu6u1MEKSid2NXPVsjnp8JKWDmmpBXMKW1Qu87/dqIICtOZmQiOycqsfp6GjpE4W5x2NHPV7Q5nKTjg7/R3mhvR741cKf4+zBiXc5XcJKOl8YCKjkNVUzZrlFZd4/wGc4D60O0MdoG7Q/tg9Z9yYYy5r1uCMks6HfujeaszQRuAX3VgshzMj4oh1vhqs7IBGFKaxO4B11C74N0Bn3A3fB37h8T3f3f/E9mlAAAAABJRU5ErkJggg==" alt="emblem" class="emblem">
-
+              <p class="primart-text-support">Support Ukraine</p>
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAgCAYAAAASYli2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHlSURBVHgBrVbRccIwDFW4/jcb1J2AbFB3AugEdIN2A2CC0gmgE0AnCEwQOkHYIGzgykEiiuIQ4PLudDa29Cw5Tz4AroBz7h3tE/oCkuVoxbXOk479xFVIOnwtkOMSLW5zEoT2ApnncCCcsxCpytC2kK3ZgQkLGr8CzuZSybg2lRxMmJI1svBZC0LTcpiPXWnC82Ygi1M5zfUVH8TzAW9GUXTAYYtmA3fp947QxAjtl2JLDJTDD40vgeCjys7iEFMS0Ea4p/EZupGomCAhZ2GgG0bFNAnFXTxCN54oppbhQ8DxAFU5tWz8x0ICzigmX2jNkLAHUbLSZaLmh4uEJJfShHQkiVV+RotdZ5hS0J4CPPg18qWynFguBm1d0y0pPReqn4k9fhg2odbE+YLWPGkmW8+F+lUcYl31jC0DB54he3ksTjOu6u1MEKSid2NXPVsjnp8JKWDmmpBXMKW1Qu87/dqIICtOZmQiOycqsfp6GjpE4W5x2NHPV7Q5nKTjg7/R3mhvR741cKf4+zBiXc5XcJKOl8YCKjkNVUzZrlFZd4/wGc4D60O0MdoG7Q/tg9Z9yYYy5r1uCMks6HfujeaszQRuAX3VgshzMj4oh1vhqs7IBGFKaxO4B11C74N0Bn3A3fB37h8T3f3f/E9mlAAAAABJRU5ErkJggg==" alt="emblem" class="emblem" />
               <ul class="list-support" id="list-support"></ul>
             </div>
           </div>
           <div class="books">
-
-            <h1 class="category-title">Best Sellers<span class="cat-span">Books</span></h1>
+            <h1 class="category-title">
+              Best Sellers<span class="cat-span">Books</span>
+            </h1>
 
             <div class="gallery"></div>
             <p class="loader visually-hidden"></p>
           </div>
           <button type="button" class="to-top">▲</button>
+        </div>
       </section>
           <div id="popUp" class="modal">
         <div class="modal-content">
             <button class="close" type="button">
                 <svg class="close-icon" width="20" height="20">
-                  <use href="/books-app-project/assets/icons-0bd4d2b3.svg#icon-close-x"></use>
+                  <use href="/books-app-project/assets/icons-341c5943.svg#icon-close-x"></use>
                 </svg>
             </button>
             <div class="modal-body">
