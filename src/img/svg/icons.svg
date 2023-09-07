@@ -41,5 +41,11 @@
 <symbol id="icon-close-x" viewBox="0 0 50 50">
 <path d="M5.86 4.040l-1.82 1.82 10.14 10.14-10.2 10.22 1.8 1.8 10.22-10.2 10.2 10.2 1.82-1.82-10.2-10.2 10.14-10.14-1.82-1.82-10.14 10.14z"></path>
 </symbol>
+<symbol id="icon-align-left" viewBox="0 0 32 32">
+<path fill="none" stroke="#111" style="stroke: var(--color1, #111)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857" d="M22.667 13.333h-18.667"></path>
+<path fill="none" stroke="#111" style="stroke: var(--color1, #111)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857" d="M28 8h-24"></path>
+<path fill="none" stroke="#111" style="stroke: var(--color1, #111)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857" d="M28 18.667h-24"></path>
+<path fill="none" stroke="#111" style="stroke: var(--color1, #111)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857" d="M22.667 24h-18.667"></path>
+</symbol>
   </defs>
 </svg>

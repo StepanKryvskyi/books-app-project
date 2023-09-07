@@ -12,7 +12,9 @@
   background-color: #111111;
 }
 
-.shoper-dark {
+
+
+.logo-dark {
   display: block;
 }
 
@@ -21,10 +23,18 @@
   color: #111111;
 }
 
-.book-dark {
+.book-dark:hover,
+.book-dark:focus {
+  text-transform: uppercase;
   color: #eac645;
+}
+
+
+.btn-more-dark {
+  color: #fff;
 }
 
 .dark-icon {
   display: none;
 }
+

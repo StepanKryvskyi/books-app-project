@@ -1,51 +1,60 @@
 const list = document.querySelector('.list-support')
 let number = 1
+const imgUrl1 = new URL('../img/support-img/image-1.png', import.meta.url);
+const imgUrl2 = new URL('../img/support-img/image-2.png', import.meta.url);
+const imgUrl3 = new URL('../img/support-img/image-3.png', import.meta.url);
+const imgUrl4 = new URL('../img/support-img/image-4.png', import.meta.url);
+const imgUrl5 = new URL('../img/support-img/image-5.png', import.meta.url);
+const imgUrl6 = new URL('../img/support-img/image-6.png', import.meta.url);
+const imgUrl7 = new URL('../img/support-img/image-7.png', import.meta.url);
+const imgUrl8 = new URL('../img/support-img/image-8.png', import.meta.url);
+const imgUrl9 = new URL('../img/support-img/image-9.png', import.meta.url);
 
 const arraySopportUA = [
   {
     title: 'Save the Children',
     url:'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-    img: './img/support-img/image-1.png',
+    img: `${imgUrl1}`,
   },
   {
     title: 'Project HOPE',
     url: 'https://www.projecthope.org/country/ukraine/',
-    img: './img/support-img/image-2.png',
+    img: `${imgUrl2}`,
   },
   {
     title: 'International Medical Corps',
     url: 'https://internationalmedicalcorps.org/country/ukraine/',
-    img: './img/support-img/image-3.png',
+    img: `${imgUrl3}`,
   },
   {
     title: 'RAZOM',
     url: 'https://www.razomforukraine.org/',
-    img: './img/support-img/image-4.png',
+    img: `${imgUrl4}`,
   },
   {
     title: 'Action against hunger',
     url: 'https://www.actionagainsthunger.org/location/europe/ukraine/',
-    img: './img/support-img/image-5.png',
+    img: `${imgUrl5}`,
   },
   {
     title: 'Serhiy Prytula Charity Foundation',
     url: 'https://prytulafoundation.org/en',
-    img: './img/support-img/image-6.png',
+    img: `${imgUrl6}`,
   },
   {
     title: 'UNITED24',
     url: 'https://u24.gov.ua/uk',
-    img: './img/support-img/image-7.png',
+    img: `${imgUrl7}`,
   },
   {
     title: 'World vision',
     url: 'https://www.wvi.org/emergencies/ukraine',
-    img: './img/support-img/image-8.png',
+    img: `${imgUrl8}`,
   },
   {
     title: 'Medicins Sans Frontieres',
     url: 'https://www.msf.org/ukraine',
-    img: './img/support-img/image-9.png',
+    img: `${imgUrl9}`,
   },
 ]
 
