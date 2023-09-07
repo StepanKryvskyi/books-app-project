@@ -4,7 +4,7 @@
 .scroll-container{
   margin-bottom: 14px;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1437px) {
 .footer{
   display: block;
   justify-content: center;
