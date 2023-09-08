@@ -15,8 +15,8 @@
   --main-cl: #4f2ee8;
   --text-cl: #111111;
   --secondary-text-cl: #b4afaf;
-  --active-cl: #EAC645;
-
+  --active-cl: #eac645;
+  
 
   font-family: 'DM Sans', sans-serif;
   font-size: 16px;
@@ -119,3 +119,5 @@ section {
     margin-bottom: 0;
   }
 }
+
+

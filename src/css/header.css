@@ -158,15 +158,79 @@ input:checked + .slider:before {
 
 .menu-container {
   position: absolute;
-  width: 375px;
-  height: 812px;
+  width: 100%;
+  height: 100%;
   padding: 20px;
   top: 64px;
   left: 16px;
   background-color: #4f2ee8;
+  background-image: url('../img/header/books-group.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: bottom center;
+ 
 }
 .mobil-menu-img {
   position: absolute;
   bottom: 0;
   left: 0;
+}
+.dark-mode-btn{
+  display: none;
+}
+
+.normal-mode{
+  display: block;
+}
+
+@media only screen and (min-width: 768px) {
+  .normal-mode{
+    display: none;
+  }
+}
+
+.user-btn{
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 4px;
+color: #ffffff;
+min-width: 185px;
+height: 45px;
+border-radius: 36px;
+background: #4F2EE8;
+border: none;
+margin-left: 24px;
+padding: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .user-btn{
+    display: none;
+  }
+}
+
+.sign-up-btn {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  width: 184px;
+  height: 48px;
+  padding: 14px;
+  color: #fff;
+  border-radius: 18px;
+  border: 1.5px solid #111;
+  background: #4f2ee8;
+}
+.sign-up-btn-text {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.56px;
+}
+@media only screen and (max-width: 768px) {
+  .sign-up-btn{
+    display: none;
+  }
 }

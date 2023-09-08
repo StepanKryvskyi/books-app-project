@@ -3,16 +3,15 @@
 const themeToggleBtn = document.querySelector('#themeToggle');
 
 // Header Item
-const darkSeeMoreButton = document.querySelector('.btn-see-more');
+// const darkSeeMoreButton = document.querySelector('.btn-see-more');
 const headerEL = document.querySelector('#header');
-
 const shoperIcon = document.querySelector('.shoper-icon');
-
 const unchecked = document.querySelector('.unchecked');
-
 const darkIcon = document.querySelector('.dark-logo');
-
 const logoIcon = document.querySelector('.logo');
+const darkBtnOn = document.querySelector('.menu-icon');
+const darkBtnOff = document.querySelector('.menu-toggle-icon');
+
 
 // Book List Item
 
@@ -35,7 +34,11 @@ export function onBtnThemeClick() {
     unchecked.classList.remove('shoper-dark');
     unchecked.classList.add('dark-shopper-icon');
     bookEl.classList.add('book-dark');
-
+    darkBtnOn.classList.add('normal-mode');
+    darkBtnOn.classList.remove('dark-mode-btn');
+    darkBtnOff.classList.add('dark-mode-btn');
+    darkBtnOff.classList.remove('normal-mode');
+    // darkSeeMoreButton.style.color = "#fff";
   } else {
     document.body.classList.remove('darkmode');
     headerEL.classList.remove('header-dark');
@@ -48,6 +51,10 @@ export function onBtnThemeClick() {
     shoperIcon.classList.remove('shoper-dark');
     shoperIcon.classList.add('dark-shopper-icon');
     bookEl.classList.remove('book-dark');
-
+    darkBtnOn.classList.add('dark-mode-btn');
+    darkBtnOn.classList.remove('normal-mode');
+    darkBtnOff.classList.add('normal-mode');
+    darkBtnOff.classList.remove('dark-mode-btn');
+    // darkSeeMoreButton.style.border = ""
   }
 }
