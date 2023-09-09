@@ -1,5 +1,5 @@
 import {requestBookData} from './API-by-book-Id-info'
-import {popUp,closeBtn, modalCard, addBook, removeBook, modalEl} from './refs'
+import {popUp,closeBtn, modalCard, addBook, removeBook, modalEl, popUpComment} from './refs'
 
 const amazon = new URL('../img/popUp/amazon.png', import.meta.url);
 const appleBooks = new URL('../img/popUp/applebooks.png', import.meta.url);
@@ -77,6 +77,7 @@ function onAddBookClick(evt) {
       addBook.classList.add('display')
       removeBook.classList.remove('display')
       removeBook.addEventListener('click', onRemoveBookClick);
+      popUpComment.style.display = "block";
     }
   }
 }
@@ -93,6 +94,7 @@ function onRemoveBookClick(evt) {
       removeBook.classList.add('display');
       addBook.classList.remove('display');
     }
+    
   }
 }
 
