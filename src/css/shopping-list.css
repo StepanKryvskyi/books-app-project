@@ -12,8 +12,21 @@
 }
 
 .shopping-list-item {
+  border-radius: 16px;
+  border: 2px solid rgba(79, 46, 232, 0.40);
+  background: #FFF;
+  min-width: 335px;
+  width: 100%;
+  padding: 30px 24px;
   position: relative;
   display: flex;
+}
+
+@media screen and (min-width: 1440px) {
+  .shopping-list-item {
+    width: 996px;
+  }
+  
 }
 
 .shopping-list-title {
@@ -166,6 +179,7 @@
 
 .shopping-list-book-name {
   color: #111;
+  width: 144px;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -173,6 +187,15 @@
   letter-spacing: -0.64px;
   text-transform: uppercase;
   margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media screen and (min-width: 768px) {
+  .shopping-list-book-name {
+    width: 100%;
+  }
 }
 
 .shopping-list-book-genre {
@@ -189,6 +212,8 @@
   color: #111;
   text-overflow: ellipsis;
   white-space: nowrap;
+  height: 53px;
+  width: 100%;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -197,9 +222,8 @@
 }
 
 .shopping-list-author {
-  margin-top: auto;
   color: #b4afaf;
-  font-family: DM Sans;
+  margin-top: auto;
   font-size: 12px;
   font-style: italic;
   font-weight: 400;
@@ -214,8 +238,8 @@
   border-radius: 50%;
   background-color: #4f2ee8;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 14px;
+  right: 14px ;
   display: flex;
   justify-content: center;
   align-items: center;
