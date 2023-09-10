@@ -1,19 +1,25 @@
 import { pagination } from './js/pagination';
 import { createCategoryGallery, createBestsellersGallery} from './js/books-gallery-cat';
-import {  galleryList, catList, catTitle, booksBox, loader, bookCard, btnSeeMore, modalEl} from './js/refs';
+import {  galleryList, catList, loader, modalEl, shopListPage, homePage, headerNavList} from './js/refs';
 import { onBtnThemeClick } from './js/dark-mode';
 import { addCategoryTitle } from './js/gallery-markup';
 import { createCategory } from './js/query-and-markup';
 import { createBookCard } from './js/pop-up';
 import {scrollTop} from './js/scroll-to-top';
-import { createShoppingCard } from './js/shopping-list';
 import { load } from './js/support-ukraine';
-import './js/mobil-menu';
+// import './js/mobil-menu';
+
+headerNavList.addEventListener('click', highlightCurrentPage)
+// console.log(headerNavList)
+function highlightCurrentPage(evt){
+  if (evt.target.classList.contains('shop-list-page')) {
+    console.log(evt.target)
+    shopListPage.classList.add('js-open-page');
+    homePage.classList.remove('js-open-page');
+  }
+}
 // Add scroll btn to top of the page 
 scrollTop();
-
-// Add books to page with shopping card
-createShoppingCard();
 
 // Creating list of categories
 createCategory();
@@ -57,22 +63,15 @@ function onClickShowCatBooks(evt) {
   }
 }
 
-document.addEventListener('click', function (event) {
-  if (event.target.classList.contains('book-cover')) {
-    onBookClick(event);
-  }
-});
+galleryList.addEventListener('click', onBookClick);
 
- function onBookClick(evt){
-  const bookId = evt.target.closest('.book-card').getAttribute('id');
+function onBookClick(evt){
+   const bookId = evt.target.closest('.book-card').getAttribute('id');
     modalEl.classList.add('active');
 	  popUp.classList.add('active');
     document.body.classList.add('modal-open')
-
     createBookCard(bookId)
-}
-
-onBookClick()
+};
 
 
 
