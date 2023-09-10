@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 14px 24px;
+  padding: 18px 20px;
   border-radius: 0px 0px 8px 8px;
   border: 1.5px solid #111;
 }
@@ -47,10 +47,13 @@
   min-width: 72px;
   min-height: 34px;
   padding: 8px 16px 8px 16px;
-  background-color: #eac645;
-  border-radius: 36px;
   gap: 10px;
 }
+.js-open-page {
+  background-color: #eac645;
+  border-radius: 36px;
+}
+
 .link-on-home-mobile {
   font-family: 'DM Sans';
   font-size: 14px;

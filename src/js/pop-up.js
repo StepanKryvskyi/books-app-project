@@ -8,20 +8,19 @@ const bookShop = new URL('../img/popUp/bookshop.png', import.meta.url);
 async function createBookCard(bookId) {
   try {
     const data = await requestBookData(bookId);
-    function addMarkup (data){
-    modalCard.innerHTML = createMarkup(data);
-   }
     addMarkup(data);
     createBookObj(data);
-    activateRemoveButton();
-
   } catch (error) {
     console.error(error.message);
   }
 }
+function addMarkup (data){
+    modalCard.innerHTML = createMarkup(data);
+  }
+
 function createMarkup(data){
-  const {_id, book_image, title, author, buy_links, description,book_image_height, book_image_width} = data;
-  return `<div class="book-id" id=${_id} >
+  const {_id, book_image, title, author, buy_links, description, list_name} = data;
+  return `<div class="book-id" id=${_id} data-category=${list_name}>
       <img class="book-cover-mw" src="${book_image}" alt="cover-book" >      
       <div class="book-info">
         <div class="thumb">
@@ -65,8 +64,8 @@ function createMarkup(data){
 const bookArr = [];
 let bookObj = {};
 
-function createBookObj({ _id, book_image, title, author, buy_links, description }){
-  bookObj = {_id, book_image, title, author, buy_links, description}
+function createBookObj({ _id, book_image, title, author, buy_links, description, list_name }){
+  bookObj = {_id, book_image, title, author, buy_links, description, list_name}
 }
 
 function onAddBookClick(evt) {
@@ -97,6 +96,7 @@ function onRemoveBookClick(evt) {
 }
 
 addBook.addEventListener('click', onAddBookClick);
+
 closeBtn.onclick = function () {
   modalEl.classList.remove('active');
     popUp.classList.remove('active');
