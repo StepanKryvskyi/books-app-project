@@ -1,5 +1,6 @@
 // <<<<<<< pagination
 import { load } from './js/support-ukraine';
+
 const emptyBox = document.querySelector('.shopping-list-empty');
 const booksBox = document.querySelector('.shop-list-with-books');
 const fundList = document.querySelector('.container-support');
@@ -64,14 +65,12 @@ function createBookMarkup() {
             <h2 class="shopping-list-book-name">${title}</h2>
             <p class="shopping-list-book-genre">${list_name}</p>
             <p class="shopping-list-book-description">${description}</p>
-            <div class="author-and-stores">
             <p class="shopping-list-author">${author}</p>        
                 <div class="shopping-list-company-icons">
                     <a href="${buy_links[0].url}" target="_blank" rel="noopener noreferrer"><img src="./img/shopping-list-icon/company-1.png" alt="Amazon"></a>
                     <a href="${buy_links[1].url}" target="_blank" rel="noopener noreferrer"><img src="./img/shopping-list-icon/company-2.png" alt="Apple Books"></a>
                     <a href="${buy_links[4].url}" target="_blank" rel="noopener noreferrer"><img src="./img/shopping-list-icon/company-3.png" alt="Bookshop"></a>
-                </div> 
-            </div>       
+                </div>      
         </div>
     </li>`
     )
