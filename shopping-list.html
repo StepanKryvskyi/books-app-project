@@ -37,8 +37,9 @@
 
     
     <title>Bookshelf</title>
-    <script type="module" crossorigin src="/books-app-project/assets/main-a70862e6.js"></script>
-    <link rel="stylesheet" href="/books-app-project/assets/main-a0ba81f8.css">
+    <script type="module" crossorigin src="/books-app-project/assets/shopping-list-9c0693aa.js"></script>
+    <link rel="modulepreload" crossorigin href="/books-app-project/assets/support-ukraine-4cf05f0b.js">
+    <link rel="stylesheet" href="/books-app-project/assets/support-ukraine-6bf88725.css">
   </head>
 
   <body>
@@ -53,11 +54,11 @@
   <nav class="nav">
     <ul class="nav-list">
       <li class="nav-item">
-        <a href="./index.html" class="nav-link home-link">HOME</a>
+        <a href="./index.html" class="nav-link home-link js-open-page">HOME</a>
       </li>
 
       <li class="nav-item">
-        <a href="./shopping-list.html" class="nav-link"
+        <a href="./shopping-list.html" class="nav-link shop-list-page"
           >SHOPPING LIST<svg
             class="unchecked shoper-dark"
             width="20"
@@ -107,70 +108,27 @@
       <a href="./index.html">Go to home</a>
       <h1>Your shopping list</h1>
     </section> -->
-    <section>
-      <h2 class="shopping-list-title">
-        Shopping <span class="shopping-list-subtitle">List</span>
-      </h2>
-
-      <div id="shoppingEmptyMessage" class="shopping-list-empty">
-        <div>
+    <section class="section">
+      <div class="shop-list-container">
+        <div class="container-support">
+          <p class="primart-text-support">Support Ukraine</p>
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAgCAYAAAASYli2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHlSURBVHgBrVbRccIwDFW4/jcb1J2AbFB3AugEdIN2A2CC0gmgE0AnCEwQOkHYIGzgykEiiuIQ4PLudDa29Cw5Tz4AroBz7h3tE/oCkuVoxbXOk479xFVIOnwtkOMSLW5zEoT2ApnncCCcsxCpytC2kK3ZgQkLGr8CzuZSybg2lRxMmJI1svBZC0LTcpiPXWnC82Ygi1M5zfUVH8TzAW9GUXTAYYtmA3fp947QxAjtl2JLDJTDD40vgeCjys7iEFMS0Ea4p/EZupGomCAhZ2GgG0bFNAnFXTxCN54oppbhQ8DxAFU5tWz8x0ICzigmX2jNkLAHUbLSZaLmh4uEJJfShHQkiVV+RotdZ5hS0J4CPPg18qWynFguBm1d0y0pPReqn4k9fhg2odbE+YLWPGkmW8+F+lUcYl31jC0DB54he3ksTjOu6u1MEKSid2NXPVsjnp8JKWDmmpBXMKW1Qu87/dqIICtOZmQiOycqsfp6GjpE4W5x2NHPV7Q5nKTjg7/R3mhvR741cKf4+zBiXc5XcJKOl8YCKjkNVUzZrlFZd4/wGc4D60O0MdoG7Q/tg9Z9yYYy5r1uCMks6HfujeaszQRuAX3VgshzMj4oh1vhqs7IBGFKaxO4B11C74N0Bn3A3fB37h8T3f3f/E9mlAAAAABJRU5ErkJggg==" alt="emblem" class="emblem" />
+          <ul class="list-support" id="list-support"></ul>
+        </div>
+        <div class="shop-list-gallery">
+          <h2 class="shopping-list-title">
+            Shopping <span class="shopping-list-subtitle">List</span>
+          </h2>
+        <div id="shoppingEmptyMessage" class="shopping-list-empty">
           <p>This page is empty, add some books and proceed to order.</p>
           <img
             src="/books-app-project/assets/backgraund-shopping-list-646e6052.png"
-            alt=""
+            alt="picture with books"
           />
         </div>
+          <div class="shop-list-with-books"></div>
+        </div>
       </div>
-
-      <ul id="shoppingBookList">
-        <!--         <li class="shopping-list-book-card">
-          <img src="" alt="Зображення книги" class="shopping-list-img" />
-          <div class="shopping-list-book-details">
-            <h2 class="shopping-list-book-name"></h2>
-            <p class="shopping-list-book-genre"></p>
-            <p class="shopping-list-book-deskription"></p>
-            <p class="shopping-list-author"></p>
-          </div>
-          <div class="shopping-list-icons">
-            <div class="shopping-list-svg">
-              <svg
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 32 32"
-              >
-                <title>trash-03</title>
-                <path
-                  fill="none"
-                  stroke-linejoin="round"
-                  stroke-linecap="round"
-                  stroke-miterlimit="4"
-                  stroke-width="2.6667"
-                  stroke="#fff"
-                  d="M12 4h8M4 8h24M25.333 8l-0.935 14.026c-0.14 2.104-0.21 3.156-0.665 3.954-0.4 0.702-1.004 1.267-1.731 1.62-0.826 0.4-1.881 0.4-3.99 0.4h-4.025c-2.109 0-3.163 0-3.99-0.4-0.727-0.353-1.331-0.917-1.731-1.62-0.455-0.798-0.525-1.85-0.665-3.954l-0.935-14.026M13.333 14v6.667M18.667 14v6.667"
-                ></path>
-              </svg>
-            </div>
-
-            <div class="shopping-list-company-icons">
-              <a href=""
-                ><img src="./img/shopping-list-icon/company-1.png" alt="Amazon"
-              /></a>
-              <a href=""
-                ><img
-                  src="./img/shopping-list-icon/company-2.png"
-                  alt="Company 2"
-              /></a>
-              <a href=""
-                ><img
-                  src="./img/shopping-list-icon/company-3.png"
-                  alt="Company 3"
-              /></a>
-            </div>
-          </div>
-        </li> -->
-      </ul>
     </section>
     <div class="pagination-wrapper">
   <div id="pagination" class="tui-pagination"></div>
