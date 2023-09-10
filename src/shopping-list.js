@@ -5,12 +5,16 @@ const emptyBox = document.querySelector('.shopping-list-empty');
 const booksBox = document.querySelector('.shop-list-with-books');
 const fundList = document.querySelector('.container-support');
 
+console.log('Window Width:', window.innerWidth);
+
 if (window.innerWidth >= 1440) {
   fundList.classList.remove('is-hidden');
   load();
 } else {
   fundList.classList.add('is-hidden');
 }
+
+console.log('.container-support class:', fundList.className);
 
 let books = localStorage.getItem('books');
 
@@ -69,7 +73,9 @@ function createBookMarkup() {
             <h2 class="shopping-list-book-name">${title}</h2>
             <p class="shopping-list-book-genre">${list_name}</p>
             <p class="shopping-list-book-description">${description}</p>
-            <p class="shopping-list-author">${author}</p>        
+            <div  class="shopping-list-book-author">
+              <p>${author}</p> 
+            </div>     
                 <div class="shopping-list-company-icons">
                     <a href="${buy_links[0].url}" target="_blank" rel="noopener noreferrer"><img src="${amazonIcon}" alt="Amazon"></a>
                     <a href="${buy_links[1].url}" target="_blank" rel="noopener noreferrer"><img src="${appleBooksIcon}" alt="Apple Books"></a>
@@ -81,3 +87,4 @@ function createBookMarkup() {
     .join(' ');
 }
 
+import { pagination } from './js/pagination';
