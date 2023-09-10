@@ -48,6 +48,10 @@ function onClickRemoveBook(evt) {
   createShopListMarkup();
 }
 
+const amazonIcon = new URL('./img/shopping-list-icon/company-1.png', import.meta.url);
+const appleBooksIcon = new URL('./img/shopping-list-icon/company-2.png', import.meta.url);
+const bookShopIcon = new URL('./img/shopping-list-icon/company-3.png', import.meta.url);
+
 // svg (41 рядок) додати у папку із зображеннями, а в розмітку потім посилання на зображення
 function createBookMarkup() {
   return books
@@ -67,9 +71,9 @@ function createBookMarkup() {
             <p class="shopping-list-book-description">${description}</p>
             <p class="shopping-list-author">${author}</p>        
                 <div class="shopping-list-company-icons">
-                    <a href="${buy_links[0].url}" target="_blank" rel="noopener noreferrer"><img src="./img/shopping-list-icon/company-1.png" alt="Amazon"></a>
-                    <a href="${buy_links[1].url}" target="_blank" rel="noopener noreferrer"><img src="./img/shopping-list-icon/company-2.png" alt="Apple Books"></a>
-                    <a href="${buy_links[4].url}" target="_blank" rel="noopener noreferrer"><img src="./img/shopping-list-icon/company-3.png" alt="Bookshop"></a>
+                    <a href="${buy_links[0].url}" target="_blank" rel="noopener noreferrer"><img src="${amazonIcon}" alt="Amazon"></a>
+                    <a href="${buy_links[1].url}" target="_blank" rel="noopener noreferrer"><img src="${appleBooksIcon}" alt="Apple Books"></a>
+                    <a href="${buy_links[4].url}" target="_blank" rel="noopener noreferrer"><img src="${bookShopIcon}" alt="Bookshop"></a>
                 </div>      
         </div>
     </li>`
