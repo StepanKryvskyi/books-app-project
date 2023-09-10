@@ -1,4 +1,4 @@
-import{l as h}from"./support-ukraine-4cf05f0b.js";const a=document.querySelector(".shopping-list-empty"),t=document.querySelector(".shop-list-with-books"),l=document.querySelector(".container-support");window.innerWidth>=1440?(l.classList.remove("is-hidden"),h()):l.classList.add("is-hidden");let o=localStorage.getItem("books");try{o=JSON.parse(o)}catch(e){console.error(e.message)}p();function p(){if(!o||!o.length){t.classList.add("is-hidden"),a.classList.remove("is-hidden");return}else a.classList.add("is-hidden"),t.classList.remove("is-hidden"),t.insertAdjacentHTML("beforeend",m()),t.addEventListener("click",g)}function g(e){if(e.target.dataset.action!=="remove")return;const s=e.target.closest(".shopping-list-item").dataset.id;o=o.filter(i=>i._id!==s),localStorage.setItem("books",JSON.stringify(o)),t.innerHTML="",p()}function m(){return o.map(({_id:e,book_image:r,title:s,author:i,buy_links:n,description:c,list_name:d})=>`<li class="shopping-list-item" data-id=${e}>
+import{l as h}from"./support-ukraine-8bbd70a3.js";const a=document.querySelector(".shopping-list-empty"),t=document.querySelector(".shop-list-with-books"),l=document.querySelector(".container-support");window.innerWidth>=1440?(l.classList.remove("is-hidden"),h()):l.classList.add("is-hidden");let e=localStorage.getItem("books");try{e=JSON.parse(e)}catch(o){console.error(o.message)}p();function p(){if(!e||!e.length){t.classList.add("is-hidden"),a.classList.remove("is-hidden");return}else a.classList.add("is-hidden"),t.classList.remove("is-hidden"),t.insertAdjacentHTML("beforeend",m()),t.addEventListener("click",g)}function g(o){if(o.target.dataset.action!=="remove")return;const s=o.target.closest(".shopping-list-item").dataset.id;e=e.filter(i=>i._id!==s),localStorage.setItem("books",JSON.stringify(e)),t.innerHTML="",p()}function m(){return e.map(({_id:o,book_image:r,title:s,author:i,buy_links:n,description:c,list_name:d})=>`<li class="shopping-list-item" data-id=${o}>
         <button type="button" class="shopping-list-svg" data-action="remove">
              <svg data-action="remove" version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32">
                 <title>trash-03</title>
@@ -10,13 +10,11 @@ import{l as h}from"./support-ukraine-4cf05f0b.js";const a=document.querySelector
             <h2 class="shopping-list-book-name">${s}</h2>
             <p class="shopping-list-book-genre">${d}</p>
             <p class="shopping-list-book-description">${c}</p>
-            <div class="author-and-stores">
             <p class="shopping-list-author">${i}</p>        
                 <div class="shopping-list-company-icons">
                     <a href="${n[0].url}" target="_blank" rel="noopener noreferrer"><img src="./img/shopping-list-icon/company-1.png" alt="Amazon"></a>
                     <a href="${n[1].url}" target="_blank" rel="noopener noreferrer"><img src="./img/shopping-list-icon/company-2.png" alt="Apple Books"></a>
                     <a href="${n[4].url}" target="_blank" rel="noopener noreferrer"><img src="./img/shopping-list-icon/company-3.png" alt="Bookshop"></a>
-                </div> 
-            </div>       
+                </div>      
         </div>
     </li>`).join(" ")}
