@@ -22,7 +22,7 @@ const popUpComment = document.querySelector('.congratulations')
 
 
 
-export {popUp, closeBtn, croSS, modalCard, addBook, removeBook, modalEl, popUpComment}
+// export {popUp, closeBtn, croSS, modalCard, addBook, removeBook, modalEl, popUpComment}
 
 const headerNavList = document.querySelector('.nav-list');
 const shopListPage = document.querySelector('.shop-list-page');
@@ -30,7 +30,7 @@ const homePage = document.querySelector('.home-link');
 
 
 
-export {popUp,closeBtn, modalCard, addBook, removeBook, modalEl, headerNavList, shopListPage, homePage}
+export {popUp,closeBtn, modalCard, addBook, removeBook, modalEl, headerNavList, shopListPage, homePage, croSS, popUpComment}
 
 export { galleryList, catList, catTitle, booksBox, loader, bookCard, btnSeeMore, btnToTop};
 
