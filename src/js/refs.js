@@ -16,13 +16,13 @@ const modalCard = document.querySelector('.book-card-mw');
 const addBook = document.querySelector('.add-button');
 const removeBook = document.querySelector('.remove-button');
 
-// const popUpComment = document.querySelector('.congratulations')
+const popUpComment = document.querySelector('.congratulations')
 
 
 
 
 
-// export {popUp, closeBtn, croSS, modalCard, addBook, removeBook, modalEl, popUpComment}
+export {popUp, closeBtn, croSS, modalCard, addBook, removeBook, modalEl, popUpComment}
 
 const headerNavList = document.querySelector('.nav-list');
 const shopListPage = document.querySelector('.shop-list-page');
