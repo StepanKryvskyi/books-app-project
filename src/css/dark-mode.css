@@ -38,4 +38,15 @@
 .dark-icon {
   display: none;
 }
+.modal-content-dark {
+  
+  background-color: #202024;
+  border: 2px solid #ffffff;
+}
+.popUp-close-dark {
+  background-color: #202024;
+}
+.close-icon-dark{
+  fill:#ffffff;
+}
 

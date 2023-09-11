@@ -11,6 +11,7 @@
 @import url('./dark-mode.css');
 
 @import url('./footer.css');
+
 :root {
   --main-cl: #4f2ee8;
   --text-cl: #111111;

@@ -57,7 +57,7 @@ body{
     }
     } 
 
-.close{
+.popUp-close{
 position: absolute;
   top: 12px;
   right: 12px;
@@ -70,7 +70,7 @@ position: absolute;
   background-color: #ffffff;
 }
 @media only screen and (min-width: 768px){
-    .close{
+    .popUp-close{
     top: 24px;
     right: 15px;
     }
@@ -85,6 +85,8 @@ position: absolute;
 .modal-body{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
 }
 @media screen and (min-width: 768px) { 
@@ -143,7 +145,6 @@ position: absolute;
 .sale-platforms-list{
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 20px;    
 }
 
@@ -153,11 +154,18 @@ position: absolute;
         flex-direction: column;
         gap: 20px;
 }
+.popUp-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
+}
 .add-button, .remove-button{
     display: inline-block;
     background-color: #ffffff;
     padding: 20px;
+    margin-bottom: 8px;
     min-width: 211px;
     color: #111111;
     font-size: 14px;
@@ -176,4 +184,18 @@ position: absolute;
 }
 .display{
     display: none;
+}
+
+.congratulations{
+    display: none;
+    text-align: center;
+    width: 242px;
+    font-size: 10px;
+    line-height: 12px;
+    font-style: normal;  
+}
+@media screen and (min-width: 768px) {
+    .congratulations{
+     width: 364px;
+    } 
 }

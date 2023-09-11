@@ -7,6 +7,7 @@ import { createCategory } from './js/query-and-markup';
 import { createBookCard } from './js/pop-up';
 import {scrollTop} from './js/scroll-to-top';
 import { load } from './js/support-ukraine';
+
 // import './js/mobil-menu';
 
 headerNavList.addEventListener('click', highlightCurrentPage)
@@ -18,6 +19,7 @@ function highlightCurrentPage(evt){
     homePage.classList.remove('js-open-page');
   }
 }
+
 // Add scroll btn to top of the page 
 scrollTop();
 
@@ -72,6 +74,8 @@ function onBookClick(evt){
     document.body.classList.add('modal-open')
     createBookCard(bookId)
 };
+
+
 
 
 
