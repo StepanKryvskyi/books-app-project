@@ -1,4 +1,4 @@
-import { modalEl, closeBtn, croSS } from "./refs";
+import { modalEl, closeBtn, croSS, modalBtn } from "./refs";
 // Button Toggle
 
 const themeToggleBtn = document.querySelector('#themeToggle');
@@ -42,6 +42,8 @@ export function onBtnThemeClick() {
     modalEl.classList.add('modal-content-dark')
     closeBtn.classList.add('popUp-close-dark');
     croSS.classList.add('close-icon-dark');
+    modalBtn.classList.add('modal-button-dark')
+    
     // darkSeeMoreButton.style.color = "#fff";
   } else {
     document.body.classList.remove('darkmode');
@@ -62,6 +64,7 @@ export function onBtnThemeClick() {
     modalEl.classList.remove('modal-content-dark');
     closeBtn.classList.remove('popUp-close-dark');
     croSS.classList.remove('close-icon-dark');
+    modalBtn.classList.add('modal-button-dark');
     // darkSeeMoreButton.style.border = ""
   }
 }
