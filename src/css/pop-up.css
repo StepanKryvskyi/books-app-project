@@ -161,7 +161,7 @@ position: absolute;
     align-items: center;
 
 }
-.add-button, .remove-button{
+ .modal-button{
     display: inline-block;
     background-color: #ffffff;
     padding: 20px;
@@ -175,16 +175,18 @@ position: absolute;
 
 }
 @media screen and (min-width: 768px) {
-    .add-button, .remove-button{
+     .modal-button{
         width: 499px;
         font-size: 18px;
         line-height: 24px;
     }
      
 }
-.display{
-    display: none;
-}
+ .modal-button:hover,
+ .modal-button:focus{
+    background-color: #4F2EE8;
+    color: #ffffff;
+ }
 
 .congratulations{
     display: none;

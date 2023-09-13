@@ -15,6 +15,7 @@ const croSS = document.querySelector('.close-icon')
 const modalCard = document.querySelector('.book-card-mw');
 const addBook = document.querySelector('.add-button');
 const removeBook = document.querySelector('.remove-button');
+const modalBtn = document.querySelector('.modal-button')
 
 const popUpComment = document.querySelector('.congratulations')
 
@@ -30,7 +31,7 @@ const homePage = document.querySelector('.home-link');
 
 
 
-export {popUp,closeBtn, modalCard, addBook, removeBook, modalEl, headerNavList, shopListPage, homePage, croSS, popUpComment}
+export {popUp,closeBtn, modalCard, addBook, removeBook, modalBtn, modalEl, headerNavList, shopListPage, homePage, croSS, popUpComment}
 
 export { galleryList, catList, catTitle, booksBox, loader, bookCard, btnSeeMore, btnToTop};
 

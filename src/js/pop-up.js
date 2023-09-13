@@ -1,10 +1,27 @@
 import {requestBookData} from './API-by-book-Id-info'
-import {popUp,closeBtn, modalCard, addBook, removeBook, modalEl, popUpComment} from './refs'
+import {popUp,closeBtn, modalCard, modalBtn, modalEl, popUpComment} from './refs'
 
 const amazon = new URL('../img/popUp/amazon.png', import.meta.url);
 const appleBooks = new URL('../img/popUp/applebooks.png', import.meta.url);
 const bookShop = new URL('../img/popUp/bookshop.png', import.meta.url);
 
+let bookArr = [];
+let bookObj = {};
+
+function handleButton(bookId){
+  const savedBook = JSON.parse(localStorage.getItem('books'));
+  if(!savedBook.some(book => book._id === bookId)){
+    modalBtn.textContent = 'ADD TO SHOPPING LIST'
+    modalBtn.addEventListener('click', onAddBookClick);
+    
+  }else{
+      modalBtn.textContent = 'REMOVE FROM THE SHOPPING LIST'
+      modalBtn.addEventListener('click', onRemoveBookClick);
+      popUpComment.style.display = "none";
+      
+  }
+  createBookCard(bookId)
+}
 async function createBookCard(bookId) {
   try {
     const data = await requestBookData(bookId);
@@ -61,28 +78,27 @@ function createMarkup(data){
       `;
  }
 
-const bookArr = [];
-let bookObj = {};
+
 
 function createBookObj({ _id, book_image, title, author, buy_links, description, list_name }){
   bookObj = {_id, book_image, title, author, buy_links, description, list_name}
 }
 
 function onAddBookClick(evt) {
-  if (evt.target.tagName === 'BUTTON') {
+  
     if (bookObj) {
       bookArr.push(bookObj);
       localStorage.setItem('books', JSON.stringify(bookArr));
-      addBook.classList.add('display')
-      removeBook.classList.remove('display')
-      removeBook.addEventListener('click', onRemoveBookClick);
+      modalBtn.removeEventListener('click', onAddBookClick);
+      modalBtn.textContent = 'REMOVE FROM THE SHOPPING LIST'
+      modalBtn.addEventListener('click', onRemoveBookClick);
       popUpComment.style.display = "block";
     }
-  }
+  
 }
 
 function onRemoveBookClick(evt) {
-  if (evt.target.tagName === 'BUTTON') {
+  
     const bookIdToRemove = bookObj._id;
     const indexToRemove = bookArr.findIndex(
       book => book._id === bookIdToRemove
@@ -90,14 +106,12 @@ function onRemoveBookClick(evt) {
     if (indexToRemove !== -1) {
       bookArr.splice(indexToRemove, 1);
       localStorage.setItem('books', JSON.stringify(bookArr));
-      removeBook.classList.add('display');
-      addBook.classList.remove('display');
-    }
-    
+      modalBtn.removeEventListener('click', onRemoveBookClick);
+      modalBtn.textContent = 'ADD TO SHOPPING LIST'
+      modalBtn.addEventListener('click', onAddBookClick);
+      popUpComment.style.display = "none";  
   }
 }
-
-addBook.addEventListener('click', onAddBookClick);
 
 closeBtn.onclick = function () {
   modalEl.classList.remove('active');
@@ -127,4 +141,4 @@ window.addEventListener('keydown', function (event) {
   }
 })
 
-export { createBookCard, createMarkup}
+export { createBookCard, createMarkup, handleButton}

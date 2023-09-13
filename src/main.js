@@ -4,7 +4,7 @@ import {  galleryList, catList, loader, modalEl, shopListPage, homePage, headerN
 import { onBtnThemeClick } from './js/dark-mode';
 import { addCategoryTitle } from './js/gallery-markup';
 import { createCategory } from './js/query-and-markup';
-import { createBookCard } from './js/pop-up';
+import { handleButton } from './js/pop-up';
 import {scrollTop} from './js/scroll-to-top';
 import { load } from './js/support-ukraine';
 
@@ -72,7 +72,8 @@ function onBookClick(evt){
     modalEl.classList.add('active');
 	  popUp.classList.add('active');
     document.body.classList.add('modal-open')
-    createBookCard(bookId)
+    if(!bookId) return
+    handleButton(bookId)
 };
 
 
