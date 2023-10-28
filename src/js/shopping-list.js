@@ -116,27 +116,30 @@
 // =======
 import { requestBookData } from './API-by-book-Id-info';
 
-document.addEventListener("DOMContentLoaded", async function () {
-    const shoppingListContainer = document.getElementById("shoppingBookList"); 
-    const emptyMessage = document.getElementById("shoppingEmptyMessage"); 
+document.addEventListener('DOMContentLoaded', function () {
+  const shoppingListContainer = document.getElementById('shoppingBookList');
+  const emptyMessage = document.getElementById('shoppingEmptyMessage');
+  emptyMessage.style.display = 'none';
 
-    const shoppingList = JSON.parse(localStorage.getItem("shoppingList")) || [];
+  const shoppingList = JSON.parse(localStorage.getItem('books')) || [];
 
-    if (shoppingList.length === 0) {
-        emptyMessage.style.display = "block";
-    } else {
-        for (const book of shoppingList) {
-            const card = await createShoppingCard(book, shoppingListContainer);
-            shoppingListContainer.appendChild(card);
-        }
-    }
+  if (shoppingList.length === 0) {
+    emptyMessage.style.display = 'block';
+  } else {
+    shoppingList.forEach(async book => {
+      console.log('book', book);
+      const card = await createShoppingCard(book, shoppingListContainer);
+      shoppingListContainer.appendChild(card);
+    });
+  }
 });
 
 export async function createShoppingCard(bookData, container) {
-    const card = document.createElement("li");
-    card.classList.add("shopping-list-book-card");
+  if (!bookData) return null;
+  const card = document.createElement('li');
+  card.classList.add('shopping-list-book-card');
 
-    card.innerHTML = `
+  card.innerHTML = `
         <img src="" alt="Зображення книги" class="shopping-list-img">
         <div class="shopping-list-book-details">
             <h2 class="shopping-list-book-name"></h2>
@@ -159,62 +162,69 @@ export async function createShoppingCard(bookData, container) {
         </div>
     `;
 
-    const image = card.querySelector(".shopping-list-img");
-    const title = card.querySelector(".shopping-list-book-name");
-    const genre = card.querySelector(".shopping-list-book-genre");
-    const description = card.querySelector(".shopping-list-book-deskription");
-    const author = card.querySelector(".shopping-list-author");
+  const image = card.querySelector('.shopping-list-img');
+  const title = card.querySelector('.shopping-list-book-name');
+  const genre = card.querySelector('.shopping-list-book-genre');
+  const description = card.querySelector('.shopping-list-book-deskription');
+  const author = card.querySelector('.shopping-list-author');
 
-    try {
-        const data = await requestBookData(bookData.id);
-        image.src = data.book_image || '';
-        title.textContent = data.title || '';
-        genre.textContent = data.list_name || '';
-        description.textContent = data.description || '';
-        author.textContent = data.author || '';
-    } catch (error) {
-        console.error(error.message);
+  try {
+    console.log(bookData);
+    const data = await requestBookData(bookData._id);
+    image.src = data.book_image || '';
+    title.textContent = data.title || '';
+    genre.textContent = data.list_name || '';
+    description.textContent = data.description || '';
+    author.textContent = data.author || '';
+  } catch (error) {
+    console.error(error.message);
+  }
+
+  card.addEventListener('click', function (event) {
+    if (event.target.classList.contains('shopping-list-svg')) {
+      const bookIdToDelete = bookData._id;
+
+      removeBookFromShoppingList(bookIdToDelete);
+
+      refreshShoppingListDisplay(container);
     }
+  });
 
-    card.addEventListener("click", function (event) {
-        if (event.target.classList.contains("shopping-list-svg")) {
-            const bookIdToDelete = bookData._id;
-    
-            removeBookFromShoppingList(bookIdToDelete);
-    
-            refreshShoppingListDisplay(container);
-        }
-    });
-
-    return card;
+  return card;
 }
 
 function removeBookFromShoppingList(bookId) {
-    try {
-        const shoppingList = JSON.parse(localStorage.getItem("shoppingList")) || [];
+  try {
+    const shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
 
-        const bookIndex = shoppingList.findIndex(book => book._id === bookId); // Використовуємо _id
+    const bookIndex = shoppingList.findIndex(book => book._id === bookId); // Використовуємо _id
 
-        if (bookIndex !== -1) {
-            shoppingList.splice(bookIndex, 1);
-        }
-        localStorage.setItem("shoppingList", JSON.stringify(shoppingList));
-    } catch (error) {
-        console.error("Помилка при спробі видалити книгу з локального сховища:", error);
+    if (bookIndex !== -1) {
+      shoppingList.splice(bookIndex, 1);
     }
+    localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
+  } catch (error) {
+    console.error(
+      'Помилка при спробі видалити книгу з локального сховища:',
+      error
+    );
+  }
 }
 
 function refreshShoppingListDisplay(container) {
-    try {
-        const shoppingList = JSON.parse(localStorage.getItem("shoppingList")) || [];
+  try {
+    const shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
 
-        container.innerHTML = "";
+    container.innerHTML = '';
 
-        shoppingList.forEach(book => {
-            const card = createShoppingCard(book, container);
-            container.appendChild(card);
-        });
-    } catch (error) {
-        console.error("Помилка при спробі оновити список книг з локального сховища:", error);
-    }
+    shoppingList.forEach(book => {
+      const card = createShoppingCard(book, container);
+      container.appendChild(card);
+    });
+  } catch (error) {
+    console.error(
+      'Помилка при спробі оновити список книг з локального сховища:',
+      error
+    );
+  }
 }

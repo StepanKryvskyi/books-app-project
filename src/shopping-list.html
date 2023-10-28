@@ -110,7 +110,44 @@
         </li> -->
       </ul>
     </section>
+    <load src="partials/pop-up.html" />
     <load src="partials/pagination.html" />
+    <div class="menu-container js-menu-container" id="mobile-menu">
+      <button
+        class="close-modal-btn js-close-menu"
+        type="button"
+        data-modal-close
+      >
+        <svg class="cross-modal-icon" width="28" height="28">
+          <use href="./img/svg/icons.svg#icon-close-x "></use>
+        </svg>
+      </button>
+
+      <ul class="mobile-menu">
+        <li class="nav-item">
+          <a href="./index.html" class="nav-link home-link">HOME</a>
+        </li>
+        <li>
+          <a href="./shopping-list.html" class="nav-link link-on-home-mobile"
+            >SHOPPING LIST
+            <svg class="" width="20" height="20">
+              <use href="./img/svg/icons.svg#icon-dark-shopper"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <img
+        class="mobil-menu-img"
+        src="./img/header/books-group.png"
+        alt="Books"
+      />
+    </div>
+    <div class="container-support">
+      <p class="primart-text-support">Support Ukraine</p>
+      <img src="./img/favicon/Vector.png" alt="emblem" class="emblem" />
+      <ul class="list-support" id="list-support"></ul>
+    </div>
+    <button type="button" class="to-top">▲</button>
     <script type="module" src="./main.js"></script>
   </body>
 </html>
